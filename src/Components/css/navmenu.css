@@ -1,0 +1,33 @@
+.menu-icon{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.menu{
+    position: absolute;
+    cursor: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: fit-content;
+    list-style-type: none;
+    background-color: #2d3748;
+    color: white;
+    padding: 5px;
+}
+.menu-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu li{
+    text-align: center;
+    margin: 13px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu-element:hover{
+    box-shadow: #7f9bca 0px 2px 5px -1px, #7f9bca 0px 1px 3px -1px;
+} 
+
