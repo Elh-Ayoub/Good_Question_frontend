@@ -1,14 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './Components/HeaderComponent'
-import Footer from './Components/FooterComponent'
-import Post from './Components/PostComponent'
+import Home from "./Views/Home"
+import Login from "./Views/Login"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 function App() {
   return (
     <div className="app">
-    <Header/>
-    <Post/>
-    <Footer/>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home/>          
+          </Route>
+          <Route exact path="/auth/login">
+            <Login/>       
+          </Route>
+          <Route path="/auth/register">
+            <h1>Register page</h1>         
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

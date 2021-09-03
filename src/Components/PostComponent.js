@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/posts.css';
+import '../css/posts.css';
 import user from '../images/user-icon.png';
 function Post() {
     return <div className="Postscontainer">
