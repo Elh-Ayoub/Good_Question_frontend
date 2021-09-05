@@ -1,6 +1,8 @@
 import './App.css';
 import Home from "./Views/Home"
 import Login from "./Views/Login"
+import Register from "./Views/Register"
+import ForgetPassword from "./Views/ForgetPassword"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -15,7 +17,10 @@ function App() {
             <Login/>       
           </Route>
           <Route path="/auth/register">
-            <h1>Register page</h1>         
+            <Register/>        
+          </Route>
+          <Route path="/auth/password-reset">
+            <ForgetPassword/>        
           </Route>
         </Switch>
       </Router>

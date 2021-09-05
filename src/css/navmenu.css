@@ -4,7 +4,7 @@
     margin-right: 20px;
 }
 .menu{
-    position: absolute;
+    position: fixed;
     cursor: auto;
     top: 0;
     left: 0;

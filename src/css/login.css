@@ -9,7 +9,7 @@
     align-items: center;
     padding: 70px 20px 30px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-image: linear-gradient( white, #7EAFD5);
+    background-image: linear-gradient( white, white, #718EA4);
     border-radius: 5px;
 }
 .login_container__card{
@@ -58,4 +58,14 @@
 }
 .login_btn:hover{
     background-color: #7EAFD5;
+}
+
+.login_link{
+    color: rgb(75, 74, 74);
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.login_link:hover{
+    color: gray;
 }

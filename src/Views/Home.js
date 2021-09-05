@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Components/HeaderComponent'
 import Footer from '../Components/FooterComponent'
-import Post from '../Components/PostComponent'
+import Posts from '../Views/Posts'
 
 function Home(){
     return <div>
             <Header/>
-            <Post/>
+            <Posts/>
             <Footer/>
         </div>
 }

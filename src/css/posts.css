@@ -3,6 +3,7 @@
     margin: auto;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .post{
     margin: 20px auto;
@@ -37,10 +38,12 @@
 .post-categories{
     display: flex;
 }
-.categorie{
+.category{
     background: #2d3748;
     width: fit-content;
-    padding: 5px;
+    padding: 7px 15px;
+    text-align: center;
+    border-radius: 15px;
     color: white;
     margin: auto 5px;
 }
