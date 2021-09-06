@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Components/HeaderComponent'
-import Footer from '../Components/FooterComponent'
 import Posts from '../Views/Posts'
+import Header from '../Components/HeaderComponent';
+import Footer from '../Components/FooterComponent';
 
 function Home(){
     return <div>
-            <Header/>
+        <Header/>
             <Posts/>
-            <Footer/>
+        <Footer/>
         </div>
 }
 

@@ -1,8 +1,7 @@
 .login_container{
-    position: absolute;
-    top: 50%;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 10%);
     width: 400px;
     display: inline-block;
     justify-content: center;

@@ -14,6 +14,9 @@
 .postsheader{
     display: flex;
 }
+.panel{
+    width: 100%;
+}
 .img-responsive{ 
     width: 50px; 
     height: 50px;
@@ -47,8 +50,101 @@
     color: white;
     margin: auto 5px;
 }
+.likes-comments{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comments-collapse a{
+    color: rgb(75, 74, 74);
+    text-decoration: none;
+    margin-top: 10px;
+}
 
-@media only screen and (max-width: 699px){
+.comment-content{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.comment-author{
+    text-align: center;
+    margin-right: 10px;
+}
+.comment-author-photo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.comment-content p{
+    margin-left: 5px;
+}
+.comments-collapse a:hover{
+    color: gray;
+}
+.comment-post{
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    margin-top: 10px;
+}
+.comment-post input{
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 100%;
+
+}
+.comment-post input:focus{
+    border: 1px solid grey;
+    outline: none;
+}
+.comment-send{
+    background: none;
+    border: 2px solid #787ef5;
+    border-radius: 5px;
+    color: #43478d;
+    text-align: center;
+}
+.comment-send:focus-within{
+    border: 2px solid #43478d;
+    color: #43478d;
+}
+.post-likes{
+    display: flex;
+    margin: 15px 5px 0 0;
+}
+.img-responsive-like{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.like-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    margin: 0 10px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    
+}
+.like-button:focus-within{
+    border: 2px solid #43478d;
+}
+.like{
+    background-color: #787ef5;
+    border: 2px solid #bbbefa;
+}
+.dislike{
+    background-color: #bbbefa;
+    border: 2px solid #787ef5;
+}
+
+  
+@media only screen and (max-width: 880px){
     .Postscontainer{
         width: 80%;
         margin: auto;
@@ -59,9 +155,9 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 640px) {
     .Postscontainer{
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
     .post{
