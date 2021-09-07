@@ -3,6 +3,7 @@ import axios from 'axios';
 import Loader from './LoaderComponent';
 import '../css/loader.css';
 import '../css/categories.css'
+import { Link } from 'react-router-dom';
 
 function CategoryCard(props) {
     const [showCategories, setshowCategories] = useState(null)
@@ -15,14 +16,16 @@ function CategoryCard(props) {
     }, [categoriesUrl])
     let content = null;
     if(showCategories){
-        content = showCategories.map((category) => 
-                    <div className="category-content">
+        content = showCategories.map((category) =>
+                <Link className="category-content" to={`/category/${category.id}/posts`}>
+                    <div>
                         <div className="category-title">{category.title}</div><br/>
                         {category.description ? (
                             <div className="category-footer">{category.description}</div>
                         ) : (<div className="category-footer">No description</div>)
                         }
                     </div>
+                </Link> 
                 )
     }else{
         content = <div className='loader'><Loader/></div>

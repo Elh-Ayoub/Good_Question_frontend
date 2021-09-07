@@ -5,6 +5,7 @@ import Register from "./Views/Register"
 import ForgetPassword from "./Views/ForgetPassword"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Categories from './Views/Categories';
+import PostsByCategories from './Views/PostsByCategories';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path="/categories">
               <Categories/>          
+            </Route>
+            <Route path="/category/:id/posts">
+              <PostsByCategories/>
             </Route>
             <div className="auth">
               <Route exact path="/auth/login">       
