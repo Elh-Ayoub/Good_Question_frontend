@@ -1,0 +1,23 @@
+.categories-contanier{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: start;
+    align-items: center;
+}
+.category-content{
+    border: 2px solid #26284e;
+    background: #585cb6;
+    color: white;
+    flex-basis: 20%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.category-title{
+    text-align: left;
+    font-weight: bold;
+    font-size: xx-large;
+}

@@ -10,6 +10,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 20px;
     border-radius: 20px;
+    background: white
 }
 .postsheader{
     display: flex;
@@ -55,6 +56,11 @@
     justify-content: space-between;
     align-items: center;
 }
+.comments-container{
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* padding: 10px; */
+    width: 100%;
+}
 .comments-collapse a{
     color: rgb(75, 74, 74);
     text-decoration: none;
@@ -66,11 +72,12 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .comment-author{
     text-align: center;
-    margin-right: 10px;
+    margin: 5px 25px 5px 10px;
+    color: darkslategray;
 }
 .comment-author-photo{
     width: 30px;
@@ -91,25 +98,32 @@
 }
 .comment-post input{
     padding: 8px 20px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     border: 1px solid grey;
     width: 100%;
 
 }
 .comment-post input:focus{
     border: 1px solid grey;
-    outline: none;
+    outline: none; 
 }
 .comment-send{
     background: none;
     border: 2px solid #787ef5;
-    border-radius: 5px;
-    color: #43478d;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+    color: #787ef5;
     text-align: center;
+    cursor: pointer;
 }
 .comment-send:focus-within{
     border: 2px solid #43478d;
     color: #43478d;
+}
+.comment-date{
+    font-size: x-small;
 }
 .post-likes{
     display: flex;
@@ -129,7 +143,7 @@
     font-weight: bold;
     color: white;
     border-radius: 5px;
-    
+    cursor: pointer;
 }
 .like-button:focus-within{
     border: 2px solid #43478d;

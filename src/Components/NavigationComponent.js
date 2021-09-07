@@ -3,6 +3,7 @@ import '../css/navmenu.css';
 import menuIcon from '../images/menu-icon.png';
 import menuIcon2 from '../images/menu-icon2.png';
 import { useTransition, animated } from 'react-spring'
+import { Link } from 'react-router-dom';
 
 function Navigation(){
     const [showMenu, setShowMenu] = useState(false);
@@ -20,7 +21,7 @@ function Navigation(){
             <li className="menu-title" onClick={() => setShowMenu(!showMenu)}><img className="menu-icon"src={menuIcon2} 
                 />GoodQuestion</li><hr/>
             <li className="menu-element"><a href="">Posts</a></li>
-            <li className="menu-element"><a href="">Categories</a></li>
+            <li className="menu-element"><Link to="/categories">Categories</Link></li>
             <li className="menu-element"><a href="">Profile</a></li>
             <li className="menu-element"><a href="">About us</a></li>
         </ul>
