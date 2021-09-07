@@ -17,10 +17,10 @@ function CategoryCard(props) {
     if(showCategories){
         content = showCategories.map((category) => 
                     <div className="category-content">
-                        <p className="category-title">{category.title}</p>
+                        <div className="category-title">{category.title}</div><br/>
                         {category.description ? (
-                            <span>{category.description}</span>
-                        ) : (<span>No description</span>)
+                            <div className="category-footer">{category.description}</div>
+                        ) : (<div className="category-footer">No description</div>)
                         }
                     </div>
                 )
