@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/login.css';
 import logo from '../images/logo.png';
-import { Link ,useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from '../Components/LoaderComponent';
 import '../css/loader.css';
 
@@ -14,8 +14,6 @@ function Register(){
     const [fail, setfail] = useState(null)
     const [success, setSuccess] = useState(null)
     const [loader, setLoader] = useState(null)
-
-   // const history = useHistory()
 
     async function Submit(){
         let info = {login, full_name, email, password, password_confirmation};
