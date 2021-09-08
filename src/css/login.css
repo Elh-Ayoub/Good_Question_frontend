@@ -68,3 +68,11 @@
 .login_link:hover{
     color: gray;
 }
+.error{
+    background: rgb(184, 8, 8);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 1px 0;
+    border-radius: 10px;
+}
