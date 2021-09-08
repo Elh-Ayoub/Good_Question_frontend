@@ -6,9 +6,21 @@ import { Link, useHistory} from "react-router-dom";
 
 function Header() {
     const history = useHistory()
-    function logout(){
-        localStorage.removeItem('user-info')
-        history.push('/auth/login')
+    async function logout(){
+        const logoutrUrl = `http://127.0.0.1:8000/api/auth/logout`;
+        let result = await fetch(logoutrUrl, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            },
+        })
+        result = await result.json()
+        let resultArr = JSON.parse(JSON.stringify(result));
+        if(resultArr['success']){
+            localStorage.removeItem('user-info')
+            history.push('/auth/login')
+        }
     }
     let rightElement =  <ul className="right-elements">
                             <li className="btn-li"><Link to="/auth/login">Log in</Link></li>
