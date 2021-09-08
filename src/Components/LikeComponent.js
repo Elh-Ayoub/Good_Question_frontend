@@ -4,7 +4,7 @@ import ThumbsUp from '../images/thumbs-up.png'
 import ThumbsDown from '../images/thumbs-down.png'
 
 function Like(props){
-    const LikeUrl = `http://127.0.0.1:8000/api/posts/${props.PostId}/like`;
+    const LikeUrl = `http://127.0.0.1:8000/api/${props.Target}/${props.TargetId}/like`;
     const [likes, setLikes] = useState(null)
     useEffect(() => {
         axios.get(LikeUrl)

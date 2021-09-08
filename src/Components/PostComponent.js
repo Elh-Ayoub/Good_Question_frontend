@@ -48,7 +48,7 @@ function PostCard(props) {
                           <button className="comment-send">send</button>
                         </div>
                         <div className='likes-comments'>
-                          <Like PostId={props.Post.id}/>
+                          <Like Target="posts" TargetId={props.Post.id}/>
                           <div onClick={() => setshowComments(!showComments)}><CommentLink PostId={props.Post.id}/></div>
                         </div>
                         

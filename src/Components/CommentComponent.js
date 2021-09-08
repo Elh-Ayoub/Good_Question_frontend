@@ -16,17 +16,19 @@ function Comments(props){
   let length = null
   if(comments){
     result =  comments.map((comment) => 
-              <div>
-                <div className="comment-content">
-                  <div className="comment-author">
+              <div className="comment">
+                <div className="comment-author">
                     <UserProfilePhoto Author={comment.author}/>
                     <figcaption className="post-author">{comment.author}</figcaption>
-                  </div>
+                </div>
+                <div className="comment-content">
                   <div>
                     <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
                     <span>{comment.content}</span>
                   </div>
+                  <Like Target="comments" TargetId={comment.id}/>
                 </div>
+                
               </div>)
   }
   return <div className='comments-container'>{result}</div>
