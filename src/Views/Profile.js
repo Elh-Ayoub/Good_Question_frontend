@@ -1,27 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../css/profile.css"
 import Header from '../Components/HeaderComponent';
 import Footer from '../Components/FooterComponent';
 import { useHistory } from "react-router-dom";
 import ProfileCard from '../Components/ProfileComponent';
+import axios from 'axios';
 
 function Profile(){
+    const [user, setUser] = useState(null)
     const history = useHistory()
     let content = null
-    /// if there is no authenticated user
-    if(localStorage.getItem("user-info")){
-        let user = JSON.parse(localStorage.getItem('user-info'))
+    
+    let login = localStorage.getItem('user-info')
+    const userURL = `http://127.0.0.1:8000/api/users/${login}`;
+    useEffect(() => {
+        axios.get(userURL)
+        .then(response => {
+            setUser(response.data)
+            console.log(response.data)
+        })
+    }, [])
+    if(user){
+        //localStorage.removeItem('user-info')
+        //localStorage.setItem('user-info', user)
         content = <div>
-        <Header/>
-        <ProfileCard user={user}/>
-        <div className="profile-footer">
-            <Footer/>
+            <Header/>
+            <ProfileCard user={user}/>
+            <div className="profile-footer">
+                <Footer/>
+            </div>
         </div>
-       </div>
-    }else{
-        alert("Log in or register please to access profile!")
-        history.goBack()
     }
+    // else{
+    //     alert("Log in or register please to access profile!")
+    //     history.goBack()
+    // }
+        
     return content
 }
 
