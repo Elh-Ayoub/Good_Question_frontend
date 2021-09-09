@@ -6,7 +6,7 @@ import ForgetPassword from "./Views/ForgetPassword"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Categories from './Views/Categories';
 import PostsByCategories from './Views/PostsByCategories';
-import Profie from './Views/Profile';
+import Profile from './Views/Profile';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
               <PostsByCategories/>
             </Route>
             <Route path="/users/profile">
-              <Profie/>
+              <Profile/>
             </Route>
             <div className="auth">
               <Route exact path="/auth/login">       
