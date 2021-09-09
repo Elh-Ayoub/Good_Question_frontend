@@ -41,7 +41,7 @@ function ForgetPassword(){
             setSuccess(null)
         }
     }
-    return <div>
+    return <div className="auth_container">
                 <div class="login_container">
                     <img className="logo-icon-login" src={logo} alt="Logo"/>
                     <div class="login_container__card">

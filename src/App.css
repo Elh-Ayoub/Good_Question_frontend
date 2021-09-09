@@ -1,6 +1,11 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
 .app{
-  position: relative;
   background-image: linear-gradient(45deg, wheat, #daeefd);
+  height: 100%;
+  width: 100%;
 }
 .auth{
   position: absolute;

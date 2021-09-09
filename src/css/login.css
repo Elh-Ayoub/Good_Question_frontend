@@ -1,3 +1,11 @@
+.auth_container{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-image: linear-gradient(45deg, wheat, #daeefd);
+    height: 100%;
+    width: 100%;
+}
 .login_container{
     position: relative;
     left: 50%;
@@ -8,8 +16,8 @@
     align-items: center;
     padding: 70px 20px 30px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-image: linear-gradient( white, white, #718EA4);
-    border-radius: 5px;
+    background-image: linear-gradient(45deg, white, transparent);
+    border-radius: 15px;
 }
 .login_container__card{
     margin-top: 60px;
@@ -83,7 +91,4 @@
     font-weight: bold;
     padding: 1px 5px;
     border-radius: 10px;
-}
-.loader{
-    
 }

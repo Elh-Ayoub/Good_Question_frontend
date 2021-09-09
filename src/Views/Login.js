@@ -36,9 +36,9 @@ function Login(){
             history.push('/');
         }
     }
-    return <div>
+    return <div className="auth_container">
                 <div class="login_container"> 
-                    <img className="logo-icon-login" src={logo} alt="Logo"/>
+                    <Link to="/"><img className="logo-icon-login" src={logo} alt="Logo"/></Link>
                     <div class="login_container__card">
                     {fail ? ( <div className="error"><p>{fail}</p></div>
                             ) : (fail)
