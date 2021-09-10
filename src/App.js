@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Categories from './Views/Categories';
 import PostsByCategories from './Views/PostsByCategories';
 import Profile from './Views/Profile';
+import PostById from './Views/PostById';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route path="/category/:id/posts">
               <PostsByCategories/>
+            </Route>
+            <Route path="/posts/:id">
+              <PostById/>
             </Route>
             <Route path="/users/profile">
               <Profile/>

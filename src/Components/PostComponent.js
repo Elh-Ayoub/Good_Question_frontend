@@ -6,6 +6,7 @@ import '../css/loader.css';
 import Comments from './CommentComponent';
 import Like from './LikeComponent';
 import CommentLink from './CommentLink';
+import { Link } from 'react-router-dom';
 
 function PostCard(props) {
   const [user, setUser] = useState(null)
@@ -24,7 +25,8 @@ function PostCard(props) {
   }
   let content = null;
   if(user){
-      content = <div className="Postscontainer">
+      content =  <Link className="post-link" to={`/posts/${props.Post.id}`}>
+       <div className="Postscontainer">
               <article className="post">
                   <div className="postsheader">
                     <figure className="text-center">
@@ -58,6 +60,7 @@ function PostCard(props) {
                   {comments}
               </article>
           </div>
+          </Link>
     }else{
         content = <div className='loader'><Loader/></div>
     }

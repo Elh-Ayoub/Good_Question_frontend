@@ -25,10 +25,9 @@ function Comments(props){
                   <div>
                     <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
                     <span>{comment.content}</span>
+                    <Like Target="comments" TargetId={comment.id}/>
                   </div>
-                  <Like Target="comments" TargetId={comment.id}/>
                 </div>
-                
               </div>)
   }
   return <div className='comments-container'>{result}</div>

@@ -5,6 +5,10 @@
     align-items: center;
     position: relative;
 }
+.post-link{
+    text-decoration: none;
+    color: black;
+}
 .post{
     margin: 20px auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -57,6 +61,7 @@
     align-items: center;
 }
 .comments-container{
+    background: rgba(255, 255, 255, 0.7);
     width: 100%;
 }
 .comments-collapse a{
@@ -130,6 +135,7 @@
 }
 .comment-date{
     font-size: x-small;
+    margin-bottom: 10px;
 }
 .post-likes{
     display: flex;
