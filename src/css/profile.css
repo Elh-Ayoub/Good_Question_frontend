@@ -100,6 +100,21 @@
     bottom: 0;
     width: 100%;
 }
+.role-rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.role-rating .field{
+    font-size:22px;
+    display:block;
+    width: 100%;
+    height:100%;
+    padding:5px 0;
+    color:#2d3748;
+    text-align: left;
+    font-size: x-large;
+}
 @media only screen and (max-width: 940px) {
     .profileContainer{
         display: block;

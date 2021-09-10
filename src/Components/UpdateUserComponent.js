@@ -11,12 +11,7 @@ function UpdateUser(props){
     const [success, setSuccess] = useState(null)
     const history = useHistory()
     function Update(){
-        const formData = new FormData()
-        formData.append('login', login);
-        formData.append('email', email);
-        formData.append('full_name', full_name);
         const userUrl = `http://127.0.0.1:8000/api/users/${props.user.id}`;
-        console.log(formData)
         axios.patch(userUrl,
                 { login, full_name, email}
         )
@@ -44,9 +39,15 @@ function UpdateUser(props){
                     <label for="full_name">Full name</label>
                     <input id="full_name" className="inputText" type="text" onChange={(e) => { setFullName(e.target.value)}} value={full_name} />
                 </div>
-                <div className="input-field">
-                    <label for="role">Role</label>
-                    <span id="role" className="inputText">{props.user.role}</span>
+                <div className="input-field role-rating">
+                    <div>
+                        <label for="role">Role</label>
+                        <span id="role" className="field">{props.user.role}</span>
+                    </div>
+                    <div>
+                        <label for="role">Rating</label>
+                        <span id="role" className="field">{props.user.rating}</span>
+                    </div>
                 </div>
                 <div className="txt-btn">
                     <button className="save-btn" onClick={Update}>Save</button>
