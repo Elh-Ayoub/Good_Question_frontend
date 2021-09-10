@@ -32,7 +32,7 @@ function Login(){
             setfail(resultArr['error'] || resultArr['message'])
         }else{
             setfail(null)
-            localStorage.setItem("user-info", resultArr['login']);
+            localStorage.setItem("user-info", resultArr['id']);
             history.push('/');
         }
     }

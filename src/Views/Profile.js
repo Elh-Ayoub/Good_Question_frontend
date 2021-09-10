@@ -11,8 +11,8 @@ function Profile(){
     const history = useHistory()
     let content = null
     
-    let login = localStorage.getItem('user-info')
-    const userURL = `http://127.0.0.1:8000/api/users/${login}`;
+    let id = localStorage.getItem('user-info')
+    const userURL = `http://127.0.0.1:8000/api/users/${id}`;
     useEffect(() => {
         axios.get(userURL)
         .then(response => {
@@ -21,8 +21,6 @@ function Profile(){
         })
     }, [])
     if(user){
-        //localStorage.removeItem('user-info')
-        //localStorage.setItem('user-info', user)
         content = <div>
             <Header/>
             <ProfileCard user={user}/>

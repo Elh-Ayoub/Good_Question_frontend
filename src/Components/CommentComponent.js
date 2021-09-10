@@ -19,7 +19,7 @@ function Comments(props){
               <div className="comment">
                 <div className="comment-author">
                     <UserProfilePhoto Author={comment.author}/>
-                    <figcaption className="post-author">{comment.author}</figcaption>
+                    <figcaption className="post-author">{props.user.login}</figcaption>
                 </div>
                 <div className="comment-content">
                   <div>

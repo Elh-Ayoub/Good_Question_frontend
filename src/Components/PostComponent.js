@@ -20,7 +20,7 @@ function PostCard(props) {
   }, [userUrl])
   let comments = null;
   if(showComments){
-    comments = <Comments PostId={props.Post.id}/>
+    comments = <Comments PostId={props.Post.id} user={user}/>
   }
   let content = null;
   if(user){
@@ -29,7 +29,7 @@ function PostCard(props) {
                   <div className="postsheader">
                     <figure className="text-center">
                       <img className="img-responsive" src={user.profile_photo}/>
-                      <figcaption className="post-author">{props.Post.author}</figcaption>
+                      <figcaption className="post-author">{user.login}</figcaption>
                     </figure>
                     <div className="panel panel-default arrow left">
                       <div className="panel-body">
