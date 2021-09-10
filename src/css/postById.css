@@ -113,3 +113,34 @@
     bottom: 0;
     width: 100%;
 }
+@media only screen and (max-width: 1024px) {
+    .post-field{
+        position: relative;
+        margin: auto;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        
+    }
+    .postContainer{
+        display: block;
+        position: relative;
+        left: 0%;
+        transform: translate(0%, 0%);
+        
+    }
+    .author-field{
+        width: 100%;
+        float: left;
+    }
+    .author-like-categories, .post-comments{
+        width: 100%;
+        margin: auto;
+    }
+    .comment-content{
+        width: 100%;
+        margin: 0;
+    }
+    /* .like-button{
+        margin: 5px 0;
+    } */
+}
