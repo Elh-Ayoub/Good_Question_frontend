@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "../css/postById.css"
 import Comments from './CommentComponent'
+import { useHistory } from 'react-router'
 
 function PostyIdCard(props){
     const [user, setUser] = useState(null)
+    const [comment, setComment] = useState(null)
     const userUrl = `http://127.0.0.1:8000/api/users/${props.Post.author}`;
-  
+    const [fail, setfail] = useState(null)
+    const [success, setSuccess] = useState(null)
+    const history = useHistory()
+
     useEffect(() => {
         axios.get(userUrl)
             .then(response => {
@@ -20,7 +25,16 @@ function PostyIdCard(props){
                     <figcaption className="author-username">{user.login}</figcaption> 
                 </div>
     }
-    
+    function createComment(){
+        const creatCommentUrl = `http://127.0.0.1:8000/api/posts/${props.Post.id}/comments`;
+        axios.post(creatCommentUrl,
+            { content: comment, user: localStorage.getItem('user-info') }
+        ).then(response => {
+            setSuccess(response.data)
+            console.log(response.data)
+            history.go(0)
+        })
+    }
     return  <div className="postContainer">
                 <div className="author-like-categories">
                     <div className="author-field">
@@ -44,8 +58,8 @@ function PostyIdCard(props){
                          
                     </div>
                     <div className="input-field-comment">
-                        <input type="text" className="comment-input" placeholder="Type a comment..."/>
-                        <button className="send-comment">send</button>
+                        <input type="text" className="comment-input" onChange={(e) => {setComment(e.target.value)}} placeholder="Type a comment..."/>
+                        <button className="send-comment" onClick={createComment}>send</button>
                     </div>
                 </div>
             </div>

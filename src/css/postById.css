@@ -17,6 +17,7 @@
     background: rgba(255, 255, 255, 0.5);
     margin: 20px auto;
     border-radius: 15px;
+    z-index: 1;
 }
 .author-like-categories{
     width: 45%;
@@ -115,11 +116,10 @@
 }
 @media only screen and (max-width: 1024px) {
     .post-field{
-        position: relative;
+        position: unset;
         margin: auto;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        
+        /* left: 50%; */
+        transform: translate(0%, 0%);
     }
     .postContainer{
         display: block;
@@ -140,7 +140,7 @@
         width: 100%;
         margin: 0;
     }
-    /* .like-button{
-        margin: 5px 0;
-    } */
+    .footer-4-posts{
+        position: relative;
+    }
 }

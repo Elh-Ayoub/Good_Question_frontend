@@ -3,9 +3,12 @@ import axios from 'axios';
 import userIcone from '../images/user-icon.png'
 import UserProfilePhoto from './UserProfilePhotoComponent';
 import Like from './LikeComponent';
+
 function Comments(props){
   const [comments, setComments] = useState(null)
+  const [author, setAuthor] = useState(null)
   const CommentsUrl = `http://127.0.0.1:8000/api/posts/${props.PostId}/comments`;
+  
   useEffect(() => {
     axios.get(CommentsUrl)
         .then(response => {
@@ -13,19 +16,31 @@ function Comments(props){
         })
   }, [CommentsUrl])
   let result = null
-  let length = null
   if(comments){
     result =  comments.map((comment) => 
               <div className="comment">
-                <div className="comment-author">
                     <UserProfilePhoto Author={comment.author}/>
-                    <figcaption className="post-author">{props.user.login}</figcaption>
-                </div>
                 <div className="comment-content">
-                  <div>
-                    <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
-                    <span>{comment.content}</span>
+                  <div className="w-100">
+                    <div className="comment-date-delete">
+                      <div>
+                        <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
+                        <span>{comment.content}</span>
+                      </div>             
+                      {comment.author == localStorage.getItem('user-info') ? (
+                        <div>
+                          <button className="delete-comment-btn">...</button>
+                          {/* <select>
+                            <option id="selected" selected>...</option>
+                            <option>Edit</option>
+                            <option>Delete</option>
+                          </select> */}
+                        </div>
+                      ) : (null)}
+                    </div>
+                    
                     <Like Target="comments" TargetId={comment.id}/>
+                    
                   </div>
                 </div>
               </div>)

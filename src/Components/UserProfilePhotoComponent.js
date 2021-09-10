@@ -11,10 +11,15 @@ function UserProfilePhoto(props){
         })
   }, [AuthorUrl])
   let profile_photo = null;
+  let login = null;
   if(Author){
     profile_photo = Author.profile_photo;
+    login = Author.login
   }
-  return <img className="comment-author-photo" src={profile_photo} />;
+  return  <div className="comment-author">
+            <img className="comment-author-photo" src={profile_photo} />
+            <figcaption className="post-author">{login}</figcaption>
+          </div>;
 }
 
 export default UserProfilePhoto
