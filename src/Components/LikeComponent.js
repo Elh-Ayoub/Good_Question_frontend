@@ -37,13 +37,18 @@ function Like(props){
         })
       }
     function createLike(type){
-      axios.post(LikeUrl,
+      if(localStorage.getItem('user-info')){
+        axios.post(LikeUrl,
         { type: type, user: localStorage.getItem('user-info') }
-      ).then(response => {
-        setSuccess(response.data)
-        console.log(response.data)
-        history.go(0)
-      })
+        ).then(response => {
+          setSuccess(response.data)
+          console.log(response.data)
+          history.go(0)
+        })
+      }else{
+        alert('Login or register first!')
+      }
+      
     }
     return <div className="post-likes">
             <button className="like-button like" onClick={() => createLike('like')}>

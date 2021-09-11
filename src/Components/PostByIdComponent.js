@@ -28,14 +28,19 @@ function PostyIdCard(props){
                 </div>
     }
     function createComment(){
-        const creatCommentUrl = `http://127.0.0.1:8000/api/posts/${props.Post.id}/comments`;
-        axios.post(creatCommentUrl,
-            { content: comment, user: localStorage.getItem('user-info') }
-        ).then(response => {
-            setSuccess(response.data)
-            console.log(response.data)
-            history.go(0)
-        })
+        if(localStorage.getItem('user-info')){
+            const creatCommentUrl = `http://127.0.0.1:8000/api/posts/${props.Post.id}/comments`;
+            axios.post(creatCommentUrl,
+                { content: comment, user: localStorage.getItem('user-info') }
+            ).then(response => {
+                setSuccess(response.data)
+                console.log(response.data)
+                history.go(0)
+            })   
+        }else{
+            alert('Login or register first!')
+        }
+        
     }
     return  <div className="postContainer">
                 <div className="author-like-categories">

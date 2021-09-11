@@ -16,6 +16,9 @@
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.6);
 }
+.panel:hover .title{
+    color: #787ef5;
+}
 .postsheader{
     display: flex;
 }
@@ -200,12 +203,9 @@
 .like-button:focus-within{
     border: 2px solid #43478d;
 }
-.like:hover, .title:hover{
+.like:hover{
     color: #787ef5;
 }
-/* .like{
-    border: 2px solid #bbbefa;
-}*/
 .dislike:hover{
     color: crimson;
 } 
