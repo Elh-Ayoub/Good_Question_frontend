@@ -89,13 +89,32 @@
 .comment-date-delete{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+}
+.comment-menu{
+    border: 1px solid gray;
+    list-style: none;
+    background: white;
+    padding: 0;
+}
+.comment-menu-element{
+    text-align: center;
+    border: 2px solid #bbbefa;
+    padding: 5px 20px;
+    font-weight: bold;
+    background: #43478d;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+}
+.comment-menu-element:hover{
+    background: #bbbefa;
+    border: 1px solid #43478d;
 }
 .w-100{
     width: 100%;
 }
-.delete-comment-btn{
+.menu-btn{
     background: none;
     font-weight: bold;
     font-size: large;
