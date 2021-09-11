@@ -3,6 +3,7 @@ import axios from 'axios'
 import "../css/postById.css"
 import Comments from './CommentComponent'
 import { useHistory } from 'react-router'
+import Menu from './MenuComponent'
 
 function PostyIdCard(props){
     const [user, setUser] = useState(null)
@@ -37,9 +38,15 @@ function PostyIdCard(props){
     }
     return  <div className="postContainer">
                 <div className="author-like-categories">
-                    <div className="author-field">
-                        {author}
-                        <span className="created_at">Created at : {new Date(props.Post.created_at).toUTCString()}</span>
+                    <div className="author-menu">
+                        <div className="author-field">
+                            {author}
+                            <span className="created_at">Created at : {new Date(props.Post.created_at).toUTCString()}</span>
+                            
+                        </div>
+                        {props.Post.author == localStorage.getItem('user-info') ? (
+                          <Menu Target="posts" id={props.Post.id} content={props.Post.content}/>
+                        ) : (null)}       
                     </div>
                     <p className="post-title">{props.Post.title}</p>
                     <div className="post-cont">

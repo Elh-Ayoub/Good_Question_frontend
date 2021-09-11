@@ -3,7 +3,7 @@ import axios from 'axios';
 import userIcone from '../images/user-icon.png'
 import UserProfilePhoto from './UserProfilePhotoComponent';
 import Like from './LikeComponent';
-import CommentMenu from './CommentMenuComponent';
+import Menu from './MenuComponent';
 
 function Comments(props){
   const [comments, setComments] = useState(null)
@@ -35,7 +35,7 @@ function Comments(props){
                     
                   </div>
                   {comment.author == localStorage.getItem('user-info') ? (
-                          <CommentMenu id={comment.id} content ={comment.content}/>
+                          <Menu Target='comments' id={comment.id} content ={comment.content}/>
                       ) : (null)}
                 </div>
               </div>)

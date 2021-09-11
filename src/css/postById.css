@@ -28,7 +28,10 @@
     display: flex;
     justify-content: start;
     text-align: center;
-    
+}
+.author-menu{
+    display: flex;
+    justify-content: space-between;
 }
 .author-username{
     font-weight: bold;
