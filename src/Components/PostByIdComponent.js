@@ -4,6 +4,7 @@ import "../css/postById.css"
 import Comments from './CommentComponent'
 import { useHistory } from 'react-router'
 import Menu from './MenuComponent'
+import Like from './LikeComponent'
 
 function PostyIdCard(props){
     const [user, setUser] = useState(null)
@@ -57,6 +58,7 @@ function PostyIdCard(props){
                             <div className="category">{category}</div>
                         )}
                     </div>
+                    <Like Target="posts" TargetId={props.Post.id}/>
                 </div>
                 <hr/>
                 <div className="post-comments">

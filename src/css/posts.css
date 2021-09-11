@@ -190,21 +190,25 @@
     padding: 5px 8px;
     margin: 0 10px;
     font-weight: bold;
-    color: white;
+    font-size: medium;
+    color: black;
     border-radius: 5px;
+    background: transparent;
     cursor: pointer;
+    border: none;
 }
 .like-button:focus-within{
     border: 2px solid #43478d;
 }
-.like{
-    background-color: #787ef5;
+.like:hover, .title:hover{
+    color: #787ef5;
+}
+/* .like{
     border: 2px solid #bbbefa;
-}
-.dislike{
-    background-color: #bbbefa;
-    border: 2px solid #787ef5;
-}
+}*/
+.dislike:hover{
+    color: crimson;
+} 
 
 @media only screen and (max-width: 1000px){
     .Postscontainer{

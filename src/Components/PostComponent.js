@@ -3,14 +3,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from './LoaderComponent';
 import '../css/loader.css';
-import Comments from './CommentComponent';
 import Like from './LikeComponent';
 import CommentLink from './CommentLink';
 import { Link } from 'react-router-dom';
 
 function PostCard(props) {
   const [user, setUser] = useState(null)
-  const [showComments, setshowComments] = useState(false)
   const userUrl = `http://127.0.0.1:8000/api/users/${props.Post.author}`;
   
   useEffect(() => {
@@ -19,14 +17,10 @@ function PostCard(props) {
           setUser(response.data)
         })
   }, [userUrl])
-  let comments = null;
-  if(showComments){
-    comments = <Comments PostId={props.Post.id} user={user}/>
-  }
   let content = null;
   if(user){
-      content =  <Link className="post-link" to={`/posts/${props.Post.id}`}>
-       <div className="Postscontainer">
+      content =  <div className="Postscontainer">
+            
               <article className="post">
                   <div className="postsheader">
                     <figure className="text-center">
@@ -35,6 +29,7 @@ function PostCard(props) {
                     </figure>
                     <div className="panel panel-default arrow left">
                       <div className="panel-body">
+                        <Link className="post-link" to={`/posts/${props.Post.id}`}>
                         <header className="text-left">
                           <div className="title">{props.Post.title}</div>
                           <time className="post-date"><i>Created at: {new Date(props.Post.created_at).toUTCString()}</i></time>
@@ -45,22 +40,18 @@ function PostCard(props) {
                                 <div className="category">{category}</div>
                               )}
                         </div>
-                        <div className="comment-post">
-                          <input type="text" placeholder="Type a comment"/>
-                          <button className="comment-send">send</button>
-                        </div>
+                        </Link>
                         <div className='likes-comments'>
                           <Like Target="posts" TargetId={props.Post.id}/>
-                          <div onClick={() => setshowComments(!showComments)}><CommentLink PostId={props.Post.id}/></div>
+                          <div><CommentLink PostId={props.Post.id}/></div>
                         </div>
-                        
                       </div>
                     </div>
                   </div>
-                  {comments}
               </article>
+            
           </div>
-          </Link>
+          
     }else{
         content = <div className='loader'><Loader/></div>
     }
