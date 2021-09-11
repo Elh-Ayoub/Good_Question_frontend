@@ -35,7 +35,7 @@ function Comments(props){
                     
                   </div>
                   {comment.author == localStorage.getItem('user-info') ? (
-                          <CommentMenu id={comment.id}/>
+                          <CommentMenu id={comment.id} content ={comment.content}/>
                       ) : (null)}
                 </div>
               </div>)

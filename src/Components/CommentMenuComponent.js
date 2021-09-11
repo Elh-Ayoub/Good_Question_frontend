@@ -4,24 +4,29 @@ import { useHistory } from 'react-router';
 
 function CommentMenu(props){
     const [dropdown, setDropdown] = useState(false)
-    const [fail, setfail] = useState(null)
-    const [success, setSuccess] = useState(null)
     const history = useHistory()
-    let deleteURL = `http://127.0.0.1:8000/api/comments/${props.id}`
+    let commentURL = `http://127.0.0.1:8000/api/comments/${props.id}`
     function deleteComment(){
-        axios.delete(deleteURL)
+        axios.delete(commentURL)
         .then(response => {
             alert(response.data.success)
             history.go(0)
         })
     }
-    if(success){
-        alert(success);
+    let content = null
+    function editComment(){
+        content = prompt('Rewrite your comment here please', props.content);
+        axios.patch(commentURL, {content})
+        .then(response => {
+            alert(response.data.success)
+            history.go(0)
+        })
     }
+    
     let dropdownMenu = null;
     if(dropdown){
       dropdownMenu = <ul className="comment-menu">
-        <li className="comment-menu-element">Edit</li>
+        <li className="comment-menu-element" onClick={editComment}>Edit</li>
         <li className="comment-menu-element" onClick={deleteComment}>Delete</li>
       </ul>
     }
