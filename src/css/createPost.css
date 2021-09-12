@@ -1,0 +1,58 @@
+.create-post-container{
+    position: relative;
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: rgba(255, 255, 255, 0.5);
+    height: 60%;
+    padding: 20px;
+    border-radius: 20px;
+    width: 70%;
+}
+.input-field-create-post{
+    margin: 20px;
+}
+.textarea{
+    position: relative;
+    width: 100%;
+    resize: vertical;
+}
+.small{
+    font-size: x-small;
+}
+.red{
+    color: red;
+}
+.input-field-create-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+.cancel-btn{
+    background: rgba(177, 175, 175, 0.192);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 2px solid #181b58;
+    color:  #181b58;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cancel-btn:hover, .create-btn:hover{
+    background: lightslategray;
+}
+.cancel-btn:focus, .create-btn:focus{
+    border: 2px solid #5d62b6;
+}
+.cancel-btn:active, .create-btn:active{
+    background: lightgray;
+}
+.create-btn{
+    background: #5d62b6;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    color:  white;
+    font-weight: bold;
+    cursor: pointer;
+}

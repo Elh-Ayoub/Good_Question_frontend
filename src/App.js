@@ -8,6 +8,7 @@ import Categories from './Views/Categories';
 import PostsByCategories from './Views/PostsByCategories';
 import Profile from './Views/Profile';
 import PostById from './Views/PostById';
+import CreatePost from './Views/CreatePost';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/users/profile">
               <Profile/>
+            </Route>
+            <Route path="/post/create">
+              <CreatePost/>
             </Route>
             <div className="auth">
               <Route exact path="/auth/login">       

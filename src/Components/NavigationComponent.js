@@ -20,10 +20,9 @@ function Navigation(){
         <ul className="menu">
             <li className="menu-title" onClick={() => setShowMenu(!showMenu)}><img className="menu-icon"src={menuIcon2} 
                 />GoodQuestion</li><hr/>
-            <li className="menu-element"><a href="">Posts</a></li>
-            <li className="menu-element"><Link to="/categories">Categories</Link></li>
-            <li className="menu-element"><a href="">Profile</a></li>
-            <li className="menu-element"><a href="">About us</a></li>
+            <li className="menu-element"><Link className="menu-link" to="/">Posts</Link></li>
+            <li className="menu-element"><Link className="menu-link" to="/categories">Categories</Link></li>
+            <li className="menu-element"><a className="menu-link" href="">About us</a></li>
         </ul>
     }
     
