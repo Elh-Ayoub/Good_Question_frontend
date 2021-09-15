@@ -26,9 +26,7 @@ function PostById(props){
     return <div>
             <Header/>
                 <div className="post-field">{content}</div>
-            <div className="footer-4-posts">
-                <Footer/>
-            </div>
+            <Footer/>
         </div>
 }
 

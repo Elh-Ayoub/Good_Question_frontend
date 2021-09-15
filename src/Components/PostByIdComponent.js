@@ -42,6 +42,7 @@ function PostyIdCard(props){
         }
         
     }
+    
     return  <div className="postContainer">
                 <div className="author-like-categories">
                     <div className="author-menu">
@@ -57,6 +58,18 @@ function PostyIdCard(props){
                     <p className="post-title">{props.Post.title}</p>
                     <div className="post-cont">
                         <p>{props.Post.content}</p>
+                    </div>
+                    <div className="post-images">
+                        {props.Post.images ? (
+                            <img className="main-img" src={props.Post.images.split(' ')[0]}/>
+                        ) : (null)}
+                        <div className="sub-imgs">
+                            {props.Post.images ? (props.Post.images.split(' ').map((image) =>
+                                image !== "" ? (
+                                    <img className="post-img" src={image} onClick ={() => {document.querySelector(".main-img").src = image;}}/>
+                                ) : (null)
+                            )) : (null)}
+                        </div>
                     </div>
                     <div className="post-categories">
                         {props.Post.categories.split(',').map((category) =>

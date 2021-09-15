@@ -12,17 +12,15 @@ function CreatePost(){
     const [state, setState] = useState({selectedFile: "", responseArray: [],})
     const [images, setImages] = useState([])
     const history = useHistory()
-    const changeHandler = (event) => {
-        for (let i = 0; i < event.target.files.length; i++) {
-            images.push(URL.createObjectURL(event.target.files[i]))
-        }
-	};
     const handleInputChange = (event) => {
         setState({
           selectedFile: event.target.files,
           responseArray:[]
         });
-      }
+        document.querySelector('.selectfile').style.background = "#181b58"
+        document.querySelector('.selectfile').style.color = "white"
+        document.querySelector('.selectfile').innerHTML = "File(s) selected"
+    }
     const formData = new FormData()
     function Create(){
         if(!title || !content || !categories){

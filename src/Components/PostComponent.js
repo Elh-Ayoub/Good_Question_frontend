@@ -35,6 +35,13 @@ function PostCard(props) {
                           <time className="post-date"><i>Created at: {new Date(props.Post.created_at).toUTCString()}</i></time>
                         </header>
                         <div className="post-content"><p>{props.Post.content}</p></div>
+                        <div className="sub-imgs-home">
+                            {props.Post.images ? (props.Post.images.split(' ').map((image) =>
+                                image !== "" ? (
+                                    <img className="post-img-home" src={image}/>
+                                ) : (null)
+                            )) : (null)}
+                        </div>
                         <div className="post-categories">
                               {props.Post.categories.split(',').map((category) =>
                                 <div className="category">{category}</div>

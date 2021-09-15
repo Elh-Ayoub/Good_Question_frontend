@@ -43,9 +43,12 @@
 .post-content{
     font-size: medium;
 }
-.text-cente{
-    text-align: center;
+.post-img-home{
+    max-width: 100px;
+    max-height: 100px;
+    margin: 5px 10px;
 }
+
 .post-categories{
     display: flex;
 }

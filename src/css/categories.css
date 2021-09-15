@@ -1,7 +1,6 @@
 .categories-contanier{
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
     justify-content: space-between;
     align-items: center;
 }
@@ -9,7 +8,7 @@
     border: 2px solid #26284e;
     background: #585cb6;
     color: white;
-    flex-basis: 20%;
+    flex-basis: 15%;
     border-radius: 10px;
     text-align: center;
     margin: 20px;

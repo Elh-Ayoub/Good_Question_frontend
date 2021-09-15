@@ -2,7 +2,7 @@ footer{
     width: 100%;
     position: relative;
     bottom: 0;
-    background: lightgrey;
+    background: transparent;
     text-align: center;
     font-size: small;
     padding: 5px;

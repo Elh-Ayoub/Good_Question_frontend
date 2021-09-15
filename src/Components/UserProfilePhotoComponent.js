@@ -16,6 +16,11 @@ function UserProfilePhoto(props){
     profile_photo = Author.profile_photo;
     login = Author.login
   }
+  if(props.Target == "profile"){
+    return <div className="profile-btn" >
+            <img src={profile_photo} />{login}
+          </div>;
+  }
   return  <div className="comment-author">
             <img className="comment-author-photo" src={profile_photo} />
             <figcaption className="post-author">{login}</figcaption>
