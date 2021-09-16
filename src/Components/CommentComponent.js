@@ -17,7 +17,12 @@ function Comments(props){
   }, [CommentsUrl])
   let result = null
   if(comments){
-    
+    comments.sort(function(a, b) {
+      var keyA = a.rating, keyB = b.rating;
+      if (keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      return 0;
+    });
     result =  comments.map((comment) => 
               <div className="comment">
                     <UserProfilePhoto Author={comment.author}/>
@@ -27,12 +32,12 @@ function Comments(props){
                       <div>
                         <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
                         <span>{comment.content}</span>
-                      </div>             
-                      
+                      </div>
                     </div>
-                    
-                    <Like Target="comments" TargetId={comment.id}/>
-                    
+                    <div className="likes-reply">
+                      <Like Target="comments" TargetId={comment.id}/>
+                      <button className="reply-btn">reply</button>
+                    </div>
                   </div>
                   {comment.author == localStorage.getItem('user-info') ? (
                           <Menu Target='comments' id={comment.id} content ={comment.content}/>

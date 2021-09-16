@@ -61,6 +61,20 @@
     color: white;
     margin: auto 5px;
 }
+.likes-reply{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reply-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.reply-btn:hover{
+    color: #787ef5;
+    font-weight: bold;
+}
 .likes-comments{
     display: flex;
     justify-content: space-between;
