@@ -16,7 +16,8 @@ function Posts(){
     }, [url])
     let content = null;
     if(posts){
-        content = posts.map((post) => 
+        
+        content = posts.slice(0).reverse().map((post) => 
             <div><PostCard Post={post}/></div>
         )
     }else{

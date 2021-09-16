@@ -64,7 +64,7 @@ function PostyIdCard(props){
                             <img className="main-img" src={props.Post.images.split(' ')[0]}/>
                         ) : (null)}
                         <div className="sub-imgs">
-                            {props.Post.images ? (props.Post.images.split(' ').map((image) =>
+                            {props.Post.images && props.Post.images.split(' ')[1] ? (props.Post.images.split(' ').map((image) =>
                                 image !== "" ? (
                                     <img className="post-img" src={image} onClick ={() => {document.querySelector(".main-img").src = image;}}/>
                                 ) : (null)

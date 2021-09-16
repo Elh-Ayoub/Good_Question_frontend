@@ -10,7 +10,6 @@ function CreatePost(){
     const [content, setContent] = useState(null)
     const [categories, setCategories] = useState(null)
     const [state, setState] = useState({selectedFile: "", responseArray: [],})
-    const [images, setImages] = useState([])
     const history = useHistory()
     const handleInputChange = (event) => {
         setState({
@@ -31,7 +30,6 @@ function CreatePost(){
                 for (let i = 0; i < state.selectedFile.length; i++) {
                     formData.append("images[]", state.selectedFile[i]);
                 }
-                formData.append('images', images);
                 formData.append('title', title);
                 formData.append('categories', categories);
                 formData.append('content', content);

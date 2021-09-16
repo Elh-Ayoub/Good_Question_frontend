@@ -6,7 +6,7 @@ function Menu(props){
     const [dropdown, setDropdown] = useState(false)
     const history = useHistory()
     let commentURL = `http://127.0.0.1:8000/api/${props.Target}/${props.id}`
-    function deleteComment(){
+    function deleteTarget(){
         axios.delete(commentURL)
         .then(response => {
             alert(response.data.success)
@@ -17,25 +17,26 @@ function Menu(props){
         })
     }
     let content = null
-    function editComment(){
-        content = prompt(`Rewrite your ${(props.Target).slice(0, -1)} here please`, props.content);
-        if(content){
-            axios.patch(commentURL, {content})
-            .then(response => {
-                alert(response.data.success)
-                if(props.Target == 'post'){
-                    history.push('/')
-                }
-                history.go(0)
-            })
+    function editTarget(){
+        if(props.Target == 'posts'){
+            history.push(`/posts/${props.id}/update`)
+        }else{
+            content = prompt(`Rewrite your ${(props.Target).slice(0, -1)} here please`, props.content);
+            if(content){
+                axios.patch(commentURL, {content})
+                .then(response => {
+                    alert(response.data.success)
+                    history.go(0)
+                })
+            }
         }
     }
     
     let dropdownMenu = null;
     if(dropdown){
       dropdownMenu = <ul className="comment-menu">
-        <li className="comment-menu-element" onClick={editComment}>Edit</li>
-        <li className="comment-menu-element" onClick={deleteComment}>Delete</li>
+        <li className="comment-menu-element" onClick={editTarget}>Edit</li>
+        <li className="comment-menu-element" onClick={deleteTarget}>Delete</li>
       </ul>
     }
 

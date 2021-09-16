@@ -9,6 +9,7 @@ import PostsByCategories from './Views/PostsByCategories';
 import Profile from './Views/Profile';
 import PostById from './Views/PostById';
 import CreatePost from './Views/CreatePost';
+import UpdatePost from './Views/UpdatePost';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/category/:id/posts">
               <PostsByCategories/>
+            </Route>
+            <Route path="/posts/:id/update">
+              <UpdatePost />
             </Route>
             <Route path="/posts/:id">
               <PostById/>
