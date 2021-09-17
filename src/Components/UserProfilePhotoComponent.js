@@ -12,14 +12,19 @@ function UserProfilePhoto(props){
   }, [AuthorUrl])
   let profile_photo = null;
   let login = null;
+  let role = null;
   if(Author){
     profile_photo = Author.profile_photo;
     login = Author.login
+    role = Author.role
   }
   if(props.Target == "profile"){
-    return <div className="profile-btn" >
-            <img src={profile_photo} />{login}
-          </div>;
+    return  <div className="profile-role">
+                <span>Role: {role}</span>
+                <div className="profile-btn" >
+                  <img src={profile_photo} />{login}
+                </div>
+            </div>
   }
   return  <div className="comment-author">
             <img className="comment-author-photo" src={profile_photo} />

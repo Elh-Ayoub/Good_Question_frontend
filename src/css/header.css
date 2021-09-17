@@ -19,12 +19,12 @@
 .left-elements{  
     font-weight: bold;
 }
-.right-elements li, .left-elements li{
+.btn-li, .left-elements li, .profile-role{
     display: flex;
     padding: 5px;
     margin: 0 10px;
 }
-.right-elements li{
+.btn-li{
     border: 2px grey solid;
     border-radius: 15px;
     padding: 6px 20px;
@@ -41,21 +41,32 @@
     height: 45px;
 
 }
+.profile-role{
+    margin-right: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-role span{
+    display: flex;
+    margin-right: 15px;
+    font-weight: bold;
+    width: 100%;
+}
 .profile-btn{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
     width: 100%;
     font-weight: bold;
+    border-radius: 20px;
+    padding-right: 5px;
+    border: 2px solid #2d3748;
 }
 .profile-btn img{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     display: flex;
     border-radius: 50%;
-    margin: 0;
-    padding: 0;
 }
 .left-elem{
     transition: margin-bottom 1s ease ;
@@ -67,9 +78,8 @@
 .left-elem:hover{
     margin-bottom: 20px;
     text-shadow: 1px 20px 5px  #2d3748;
-    
 }
-.right-elements li:hover{
+.btn-li:hover, .profile-btn:hover{
     background-color: #2d3748;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

@@ -31,7 +31,8 @@ function Header() {
                         </ul>;
     if(localStorage.getItem('user-info')){
             rightElement = <ul className="right-elements">
-                                <li><Link to="/users/profile" ><UserProfilePhoto Target="profile" Author={localStorage.getItem('user-info')}/></Link></li>
+                                <li className=""><Link to="/users/profile" ><UserProfilePhoto Target="profile" Author={localStorage.getItem('user-info')}/></Link></li>
+                                <li className="btn-li">My posts</li>
                                 <li className="btn-li" onClick={logout}>Logout</li>
                             </ul>
     
