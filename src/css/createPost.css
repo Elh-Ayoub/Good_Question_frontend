@@ -56,3 +56,12 @@
     font-weight: bold;
     cursor: pointer;
 }
+.save-btn{
+    background: #d49b4f;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    color:  white;
+    font-weight: bold;
+    cursor: pointer;
+}

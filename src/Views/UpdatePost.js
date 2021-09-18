@@ -103,7 +103,7 @@ function UpdatePost(){
                             </div>
                             <div className="input-field-create-btn">
                             <Link to="/"><button className="cancel-btn">Cancel</button></Link>
-                            <button className="create-btn" onClick={update}>Create</button>  
+                            <button className="save-btn" onClick={update}>Save</button>  
                             </div>
                         </div>
                         <Footer/>

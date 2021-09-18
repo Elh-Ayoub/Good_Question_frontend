@@ -22,6 +22,7 @@ function Navigation(){
                 />GoodQuestion</li><hr/>
             <li className="menu-element"><Link className="menu-link" to="/">Posts</Link></li>
             <li className="menu-element"><Link className="menu-link" to="/categories">Categories</Link></li>
+            {localStorage.getItem('user-info') ? (<li className="menu-element"><Link className="menu-link" to={`/users/${localStorage.getItem('user-info')}/myposts`}>My posts</Link></li>) : (null)}
             <li className="menu-element"><a className="menu-link" href="">About us</a></li>
         </ul>
     }

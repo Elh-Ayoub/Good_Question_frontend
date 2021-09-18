@@ -10,6 +10,7 @@ import Profile from './Views/Profile';
 import PostById from './Views/PostById';
 import CreatePost from './Views/CreatePost';
 import UpdatePost from './Views/UpdatePost';
+import MyPosts from './Views/MyPosts';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/posts/:id">
               <PostById/>
+            </Route>
+            <Route path="/users/:id/myposts">
+              <MyPosts/>
             </Route>
             <Route path="/users/profile">
               <Profile/>

@@ -6,9 +6,9 @@ import Loader from '../Components/LoaderComponent';
 import PostCard from '../Components/PostComponent';
 import { useParams } from 'react-router';
 
-function PostsByCategories(props){
+function MyPosts(props){
     const { id } = useParams()
-    const url = `http://127.0.0.1:8000/api/categories/${id}/posts`;
+    const url = `http://127.0.0.1:8000/api/users/${id}/posts`;
     const [posts, setposts] = useState(null)
     useEffect(() => {
         axios.get(url)
@@ -31,4 +31,4 @@ function PostsByCategories(props){
         </div>
 }
 
-export default PostsByCategories
+export default MyPosts
