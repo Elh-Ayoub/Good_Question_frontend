@@ -24,8 +24,11 @@ function PostsByCategories(props){
     }else{
         content = <div className='loader'><Loader/></div>
     }
+    const queryParams = new URLSearchParams(window.location.search);
+    const name = queryParams.get('name');
     return <div>
             <Header/>
+                <h2 className="page-title">{name.charAt(0).toUpperCase() + name.slice(1)}'s posts</h2>
                 <div>{content}</div>
             <Footer/>
         </div>

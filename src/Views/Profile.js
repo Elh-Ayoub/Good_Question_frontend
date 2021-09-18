@@ -23,6 +23,7 @@ function Profile(){
     if(user){
         content = <div>
             <Header/>
+            <h2 className="page-title">Profile</h2>
             <ProfileCard user={user}/>
             <div className="profile-footer">
                 <Footer/>

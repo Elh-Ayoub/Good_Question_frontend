@@ -40,6 +40,10 @@ html, body {
 .toCreatePost .comment-author{
   margin-right: 10px;
 }
+.page-title{
+  width: 80%;
+  margin: 15px auto 0 auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

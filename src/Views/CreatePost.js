@@ -50,6 +50,7 @@ function CreatePost(){
     }
     return  <div className="CreatePost">
                 <Header/>
+                <h2 className="page-title">Create post</h2>
                 <div className="create-post-container">
                     <div className="input-field-create-post">
                         <label>Title<span className="red">*</span>: </label>

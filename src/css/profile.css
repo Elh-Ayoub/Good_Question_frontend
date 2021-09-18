@@ -1,11 +1,3 @@
-.profile{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    background-image: linear-gradient(45deg, wheat, #daeefd);
-    height: 100%;
-    width: 100%;
-}
 .profileContainer{
     display: flex;
     width: fit-content;

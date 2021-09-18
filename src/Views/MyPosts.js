@@ -26,6 +26,7 @@ function MyPosts(props){
     }
     return <div>
             <Header/>
+                <h2 className="page-title">My posts</h2>
                 <div>{content}</div>
             <Footer/>
         </div>

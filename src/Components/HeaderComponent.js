@@ -3,12 +3,10 @@ import '../css/header.css';
 import logo from '../images/logo.png';
 import Navigation from './NavigationComponent';
 import { Link, useHistory} from "react-router-dom";
-import axios from 'axios';
 import UserProfilePhoto from './UserProfilePhotoComponent';
 
 function Header() {
     const history = useHistory()
-    const [user, setAuthor] = useState(null)
     async function logout(){
         const logoutrUrl = `http://127.0.0.1:8000/api/auth/logout`;
         let result = await fetch(logoutrUrl, {
@@ -39,7 +37,7 @@ function Header() {
     return <nav className="navbar">
             <ul className="left-elements">
                 <li><Navigation/></li>
-                <li><img className="logo-icone" src={logo} alt="Logo"/> </li>
+                <li><img className="logo-icon" src={logo} alt="Logo"/></li>
                 <li className="left-elem"><Link to='/'>Home</Link></li>
                 <li className="left-elem"><Link to="/contact-us">Contact us</Link></li>
             </ul>

@@ -36,7 +36,7 @@
     text-decoration: none;
     color: inherit;
 }
-.logo-icone{
+.logo-icon{
     width: 60px;
     height: 45px;
 
@@ -84,28 +84,29 @@
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.right-elements-navbar{
+    visibility: hidden;
+}
 @media only screen and (max-width: 691px) {
-    .navbar{
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+    .right-elements{
+        display: none;
     }
-    .right-elements, .left-elements{
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
+    .right-elements-navbar{
+        visibility: visible;
+    }
+    .menu-title .menu-icon{
+        margin: 0;
+        padding: 0;
     }
 }
-@media only screen and (max-width: 404px) {
+@media only screen and (max-width: 350px) {
     .navbar{
-        justify-content: start;
+        margin: 0;
+        padding: 0;
     }
-    .right-elements, .left-elements{
+    .left-elements{
         display: block;
-        margin: 0 2px;
+        margin: 0;
     }
-    .right-elements li{
-        margin: 5px 0;
-    }
+    
 }

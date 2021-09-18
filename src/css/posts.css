@@ -71,15 +71,6 @@
     justify-content: space-between;
     align-items: center;
 }
-.reply-btn{
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-.reply-btn:hover{
-    color: #787ef5;
-    font-weight: bold;
-}
 .likes-comments{
     display: flex;
     justify-content: space-between;
@@ -103,6 +94,13 @@
     margin-top: 10px;
     padding: 10px;
     
+}
+.reply-comment{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
 .comment-content{
     display: flex;

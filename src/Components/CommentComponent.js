@@ -4,6 +4,7 @@ import userIcone from '../images/user-icon.png'
 import UserProfilePhoto from './UserProfilePhotoComponent';
 import Like from './LikeComponent';
 import Menu from './MenuComponent';
+import CommentReply from './ReplyComments';
 
 function Comments(props){
   const [comments, setComments] = useState(null)
@@ -16,6 +17,7 @@ function Comments(props){
         })
   }, [CommentsUrl])
   let result = null
+  
   if(comments){
     comments.sort(function(a, b) {
       var keyA = a.rating, keyB = b.rating;
@@ -36,14 +38,14 @@ function Comments(props){
                     </div>
                     <div className="likes-reply">
                       <Like Target="comments" TargetId={comment.id}/>
-                      <button className="reply-btn">reply</button>
-                    </div>
+                    </div><CommentReply id={comment.id}/>
                   </div>
                   {comment.author == localStorage.getItem('user-info') ? (
                           <Menu Target='comments' id={comment.id} content ={comment.content}/>
                       ) : (null)}
                 </div>
               </div>)
+              
   }
   return <div className='comments-container'>{result}</div>
 }

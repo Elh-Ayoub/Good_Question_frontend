@@ -24,6 +24,7 @@ function Home(){
     }
     return <div>
         <Header/>
+            <h2 className="page-title">Home</h2>
             <div className="toCreatePost">
                 <Link to="users/profile">{avatar}</Link>
                 <span onClick={createPost}>What's in your mind? a goodquestion?</span>

@@ -17,7 +17,7 @@ function CategoryCard(props) {
     let content = null;
     if(showCategories){
         content = showCategories.map((category) =>
-                <Link className="category-content" to={`/category/${category.id}/posts`}>
+                <Link className="category-content" to={`/category/${category.id}/posts?name=${category.title}`}>
                     <div>
                         <div className="category-title">{category.title}</div><br/>
                         {category.description ? (
