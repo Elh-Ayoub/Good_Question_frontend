@@ -7,6 +7,7 @@ import PostCard from '../Components/PostComponent';
 import { useParams } from 'react-router';
 import ArrowUp from '../images/arrow-up.png'
 import ArrowDown from '../images/arrow-down.png'
+import Pagination from '../Components/Pagination';
 
 function MyPosts(){
     const { id } = useParams()
@@ -15,10 +16,14 @@ function MyPosts(){
     const [sortByLikes, setSortByLikes] = useState("asc")
     const [sortByDate, setSortByDate] = useState("asc")
     const [sortByTitle, setSortByTitle] = useState("asc")
+    //pagination
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(10)
+
     useEffect(() => {
         axios.get(url)
             .then(response => {
-                setposts(response.data)
+                setposts(response.data.reverse())
             })
     }, [url])
     function restyle(activeBtnId, noneActive1, noneActive2, order){
@@ -49,8 +54,8 @@ function MyPosts(){
                 setSortByLikes("asc")
                 posts.sort(function(a, b) {
                     var keyA = a.rating, keyB = b.rating;
-                    if (keyA < keyB) return 1;
-                    if (keyA > keyB) return -1;
+                    if (keyA < keyB) return -1;
+                    if (keyA > keyB) return 1;
                     return 0;
                 });
             }
@@ -58,8 +63,8 @@ function MyPosts(){
                 setSortByLikes("desc")
                 posts.sort(function(a, b) {
                     var keyA = a.rating, keyB = b.rating;
-                    if (keyA < keyB) return -1;
-                    if (keyA > keyB) return 1;
+                    if (keyA < keyB) return 1;
+                    if (keyA > keyB) return -1;
                     return 0;
                 });
             }
@@ -69,8 +74,8 @@ function MyPosts(){
                 setSortByDate("asc")
                 posts.sort(function(a, b) {
                     var keyA = a.created_at, keyB = b.created_at;
-                    if (keyA < keyB) return 1;
-                    if (keyA > keyB) return -1;
+                    if (keyA < keyB) return -1;
+                    if (keyA > keyB) return 1;
                     return 0;
                 });
             }
@@ -78,8 +83,8 @@ function MyPosts(){
                 setSortByDate("desc")
                 posts.sort(function(a, b) {
                     var keyA = a.created_at, keyB = b.created_at;
-                    if (keyA < keyB) return -1;
-                    if (keyA > keyB) return 1;
+                    if (keyA < keyB) return 1;
+                    if (keyA > keyB) return -1;
                     return 0;
                 });
             }         
@@ -90,8 +95,8 @@ function MyPosts(){
                 setSortByTitle("asc")
                 posts.sort(function(a, b) {
                     var keyA = a.title, keyB = b.title;
-                    if (keyA < keyB) return 1;
-                    if (keyA > keyB) return -1;
+                    if (keyA < keyB) return -1;
+                    if (keyA > keyB) return 1;
                     return 0;
                 });
             }
@@ -99,8 +104,8 @@ function MyPosts(){
                 setSortByTitle("desc")
                 posts.sort(function(a, b) {
                     var keyA = a.title, keyB = b.title;
-                    if (keyA < keyB) return -1;
-                    if (keyA > keyB) return 1;
+                    if (keyA < keyB) return 1;
+                    if (keyA > keyB) return -1;
                     return 0;
                 });
             } 
@@ -108,10 +113,16 @@ function MyPosts(){
         } 
     }
     let content = null;
+    let pagination = null;
     if(posts){
-        content = posts.slice(0).reverse().map((post) => 
+        const indexOfLastPost = currentPage * postsPerPage
+        const indexOfFirstPost = indexOfLastPost - postsPerPage;
+        const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+        const paginate = (num) => {setCurrentPage(num); window.scrollTo(0, 0);}
+        content = currentPosts.map((post) => 
             <div><PostCard Post={post}/></div>
         )
+        pagination = <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
     }else{
         content = <div className='loader'><Loader/></div>
     }
@@ -124,6 +135,7 @@ function MyPosts(){
                     <button id="bytitle" onClick={() => fsort("title")}><span>sort by title</span><img id="title-icon" className='sort-btn-icon' src=""/></button>
                 </div>
                 <div>{content}</div>
+                {pagination}
             <Footer/>
         </div>
 }

@@ -229,7 +229,32 @@
 .dislike:hover{
     color: crimson;
 } 
-
+.pagination-nav{
+    width: fit-content;
+    margin: auto;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-elem{
+    list-style: none;
+    margin: 5px;
+}
+.pagination-elem a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid grey;
+    padding: 5px 8px;
+    background: white;
+}
+.pagination-elem a:focus{
+    background: #43478d;
+    color: white;
+    
+}
 @media only screen and (max-width: 1000px){
     .Postscontainer{
         width: 70%;
