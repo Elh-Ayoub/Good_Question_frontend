@@ -62,7 +62,7 @@ html, body {
   font-weight: bold;
 }
 .sort-btns button:hover{
-  background: #a0c1fc;
+  background: #a0c2fc70;
 }
 .sort-btn-icon{
   width: 0;
