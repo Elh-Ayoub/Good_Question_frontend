@@ -1,0 +1,103 @@
+.contact-us-contaner{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+.form-side{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    color: rgb(3, 152, 245);
+    padding: 20px 0;
+}
+.contact-info{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(3, 152, 245);
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 20px 0;
+}
+.contact-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-link{
+    color: wheat;
+    text-decoration: none;
+}
+.contact-link:hover{
+    color: cyan;
+}
+.w-70{
+    width: 70%;
+}
+.form-side-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+}
+.form-side-input label{
+    font-weight: bold;
+}
+.form-side-input input{
+    padding: 10px 20px;
+    width: 60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.form-side-input textarea{
+    padding: 10px 20px;
+    resize: vertical;
+    width: 60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.send-email-btn{
+    padding: 10px 20px;
+    width: 50%;
+    margin: auto;
+    background: rgba(58, 58, 190, 0.4);
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 20px;
+    border: 2px solid darkcyan;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.send-email-btn:hover{
+    background: rgba(0, 139, 139, 0.5);
+    color: rgba(58, 58, 190, 0.5);
+}
+.send-email-btn:active{
+    background: wheat;
+}
+@media only screen and (max-width: 1105px) {
+    .contact-us-contaner{
+        display: block;
+    }
+}
+@media only screen and (max-width: 494px) {
+    .contact-us-contaner{
+        display: inline;
+        width: 100%;
+    }
+    .contact-info{
+        width: 100%;
+    }
+    .w-70{
+        width: 85%;
+    }
+}
+

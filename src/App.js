@@ -11,6 +11,7 @@ import PostById from './Views/PostById';
 import CreatePost from './Views/CreatePost';
 import UpdatePost from './Views/UpdatePost';
 import MyPosts from './Views/MyPosts';
+import ContactUs from './Views/ContactUs';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/post/create">
               <CreatePost/>
+            </Route>
+            <Route path="/contact-us">
+              <ContactUs/>
             </Route>
             <div className="auth">
               <Route exact path="/auth/login">       
