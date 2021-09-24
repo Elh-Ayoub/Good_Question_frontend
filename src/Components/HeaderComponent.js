@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/header.css';
 import logo from '../images/logo.png';
 import Navigation from './NavigationComponent';
 import { Link, useHistory} from "react-router-dom";
 import UserProfilePhoto from './UserProfilePhotoComponent';
+import axios from 'axios';
 
 function Header() {
     const history = useHistory()
     const [resaults, setResaults] = useState(null);
+    const [users, setUsers] = useState(null);
     const [showResaults, setShowResaults] = useState();
+    const AllUsersURL = `http://127.0.0.1:8000/api/users`
+    useEffect(() => {
+        axios.get(AllUsersURL)
+        .then(response => {
+            setUsers(response.data)
+        })
+    }, [])
+    
     async function logout(){
         const logoutrUrl = `http://127.0.0.1:8000/api/auth/logout`;
         let result = await fetch(logoutrUrl, {
@@ -43,6 +53,11 @@ function Header() {
                             'login': <Link to="/auth/login">Login</Link>, 'register': <Link to="/auth/register">Register</Link>,
                             'contact-us': <Link to="/contact-us">Contact us</Link>,
                         }
+            if(users){
+                users.map((user)=>{
+                    pages[user.login] = <Link to={`/user/profile/${user.id}`}>{user.login} - profile</Link>
+                })
+            }
             if(localStorage.getItem('user-info')){
                 pages['My posts'] = <Link to={`/users/${localStorage.getItem('user-info')}/myposts`}>My posts</Link>
                 pages['profile'] = <Link to="/users/profile">Profile</Link>
