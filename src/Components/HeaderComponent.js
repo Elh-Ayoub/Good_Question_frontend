@@ -40,7 +40,9 @@ function Header() {
             value = value.toUpperCase()
             const pages = {'home': <Link to="/">Home</Link>, 'Categories': <Link to="/categories">Categories</Link>,
                             'posts': <Link to="/">Posts</Link>,
-                            'login': <Link to="/auth/login">Login</Link>, 'register': <Link to="/auth/register">Register</Link>}
+                            'login': <Link to="/auth/login">Login</Link>, 'register': <Link to="/auth/register">Register</Link>,
+                            'contact-us': <Link to="/contact-us">Contact us</Link>,
+                        }
             if(localStorage.getItem('user-info')){
                 pages['My posts'] = <Link to={`/users/${localStorage.getItem('user-info')}/myposts`}>My posts</Link>
                 pages['profile'] = <Link to="/users/profile">Profile</Link>

@@ -12,6 +12,7 @@ import CreatePost from './Views/CreatePost';
 import UpdatePost from './Views/UpdatePost';
 import MyPosts from './Views/MyPosts';
 import ContactUs from './Views/ContactUs';
+import UserProfile from './Views/UsersProfile';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route path="/users/profile">
               <Profile/>
+            </Route>
+            <Route path="/user/profile/:id">
+              <UserProfile/>
             </Route>
             <Route path="/post/create">
               <CreatePost/>

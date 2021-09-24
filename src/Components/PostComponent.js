@@ -24,8 +24,10 @@ function PostCard(props) {
               <article className="post">
                   <div className="postsheader">
                     <figure className="text-center">
-                      <img className="img-responsive" src={user.profile_photo}/>
-                      <figcaption className="post-author">{user.login}</figcaption>
+                      <Link className="login_link" to={`/user/profile/${user.id}`}>
+                        <img className="img-responsive" src={user.profile_photo}/>
+                        <figcaption className="post-author">{user.login}</figcaption>
+                      </Link>
                     </figure>
                     <div className="panel panel-default arrow left">
                       <div className="panel-body">

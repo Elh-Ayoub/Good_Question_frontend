@@ -5,6 +5,7 @@ import Comments from './CommentComponent'
 import { useHistory } from 'react-router'
 import Menu from './MenuComponent'
 import Like from './LikeComponent'
+import { Link } from 'react-router-dom';
 
 function PostyIdCard(props){
     const [user, setUser] = useState(null)
@@ -23,8 +24,10 @@ function PostyIdCard(props){
     let author = null
     if(user){
         author = <div>
-                    <img className="author-img" src={user.profile_photo} />
-                    <figcaption className="author-username">{user.login}</figcaption> 
+                    <Link className="login_link" to={`/user/profile/${user.id}`}>
+                        <img className="author-img" src={user.profile_photo} />
+                        <figcaption className="author-username">{user.login}</figcaption> 
+                    </Link>
                 </div>
     }
     function createComment(){
