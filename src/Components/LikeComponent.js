@@ -10,13 +10,12 @@ function Like(props){
     const LikeUrl = `http://127.0.0.1:8000/api/${props.Target}/${props.TargetId}/like`;
     const [likes, setLikes] = useState(null)
     const [success, setSuccess] = useState(null)
-    const history = useHistory()
     useEffect(() => {
         axios.get(LikeUrl)
             .then(response => {
               setLikes(response.data)
             })
-      }, [LikeUrl])
+      }, [likes, success])
       let countLike = 0;
       let countDislike = 0;
       let LikeIcone = ThumbsUp
@@ -43,7 +42,6 @@ function Like(props){
         ).then(response => {
           setSuccess(response.data)
           console.log(response.data)
-          history.go(0)
         })
       }else{
         alert('Login or register first!')

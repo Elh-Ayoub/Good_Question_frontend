@@ -15,7 +15,7 @@ function Comments(props){
         .then(response => {
           setComments(response.data)
         })
-  }, [CommentsUrl])
+  }, [comments, props.change])
   let result = null
   
   if(comments){

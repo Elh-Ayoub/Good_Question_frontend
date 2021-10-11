@@ -9,6 +9,7 @@ function CommentReply(props){
     const [showReplies, setShowReplies] = useState(false)
     const [content, setContent] = useState(null)
     const [replies, setReplies] = useState(null)
+    const [success, setSuccess] = useState(null)
     const history = useHistory()
     let commentURL = `http://127.0.0.1:8000/api/comments/${props.id}/comment`
     useEffect(()=> {
@@ -16,13 +17,15 @@ function CommentReply(props){
         .then(response => {
             setReplies(response.data)
         })
-    }, [commentURL])
+    }, [success])
     function createReply(){
         if(localStorage.getItem('user-info')){ 
             axios.post(commentURL,
                 {content:content, user: localStorage.getItem('user-info')}
             ).then(response => {
-                history.go(0)
+                //history.go(0)
+                //setChange(!change)
+                setSuccess(response.data)
             })  
         }else{
             alert('Login or register first!')

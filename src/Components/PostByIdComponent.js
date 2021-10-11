@@ -13,7 +13,6 @@ function PostyIdCard(props){
     const userUrl = `http://127.0.0.1:8000/api/users/${props.Post.author}`;
     const [fail, setfail] = useState(null)
     const [success, setSuccess] = useState(null)
-    const history = useHistory()
 
     useEffect(() => {
         axios.get(userUrl)
@@ -37,9 +36,8 @@ function PostyIdCard(props){
                 { content: comment, user: localStorage.getItem('user-info') }
             ).then(response => {
                 setSuccess(response.data)
-                console.log(response.data)
-                history.go(0)
-            })   
+                //console.log(response.data)
+            })
         }else{
             alert('Login or register first!')
         }
@@ -84,11 +82,11 @@ function PostyIdCard(props){
                 <hr/>
                 <div className="post-comments">
                     <div className="comments-field">
-                        {user ? (<Comments className="comment-cont" PostId={props.Post.id} user={user}/>) : (null)}
+                        {user ? (<Comments className="comment-cont" PostId={props.Post.id} user={user} change={success}/>) : (null)}
                          
                     </div>
                     <div className="input-field-comment">
-                        <input type="text" className="comment-input" onChange={(e) => {setComment(e.target.value)}} placeholder="Type a comment..."/>
+                        <input type="text" id="comment-input" className="comment-input" onChange={(e) => {setComment(e.target.value)}} placeholder="Type a comment..."/>
                         <button className="send-comment" onClick={createComment}>send</button>
                     </div>
                 </div>

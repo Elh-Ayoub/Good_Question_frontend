@@ -13,7 +13,6 @@ function Menu(props){
             if(props.Target == 'posts'){
                 history.push('/')
             }
-            history.go(0)
         })
     }
     let content = null
@@ -26,7 +25,6 @@ function Menu(props){
                 axios.patch(commentURL, {content})
                 .then(response => {
                     alert(response.data.success)
-                    history.go(0)
                 })
             }
         }
