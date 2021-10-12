@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../css/profile.css"
-import { useHistory} from "react-router-dom";
 import axios from 'axios';
 
 function UpdatePassword(props){
@@ -9,7 +8,6 @@ function UpdatePassword(props){
     const [password_confirmation, setNewPasswordConfirmation] = useState(null);
     const [fail, setfail] = useState(null)
     const [success, setSuccess] = useState(null)
-    const history = useHistory()
 
     function Update(){
         const userUrl = `http://127.0.0.1:8000/api/users/${props.user.id}/password`;
@@ -22,8 +20,7 @@ function UpdatePassword(props){
                 setfail(result.data.error)
             }else{
                 setSuccess('User password updated successfully!')
-            } 
-           // history.go(0)
+            }
         })
         .catch((error) => {
             console.error('Error:', error);

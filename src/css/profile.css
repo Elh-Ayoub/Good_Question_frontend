@@ -1,7 +1,7 @@
 .profileContainer{
     display: flex;
     width: fit-content;
-    justify-content: start;
+    justify-content: flex-start;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;

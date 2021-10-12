@@ -11,12 +11,13 @@ function PostCard(props) {
   const [user, setUser] = useState(null)
   const userUrl = `http://127.0.0.1:8000/api/users/${props.Post.author}`;
   
-  useEffect(() => {
+  useEffect(() => {async function f(){
+    await 
     axios.get(userUrl)
-        .then(response => {
-          setUser(response.data)
-        })
-  }, [userUrl])
+      .then(response => {
+        setUser(response.data)
+      })
+  } f()}, [userUrl])
   let content = null;
   if(user){
       content =  <div className="Postscontainer">
@@ -25,7 +26,7 @@ function PostCard(props) {
                   <div className="postsheader">
                     <figure className="text-center">
                       <Link className="login_link" to={`/user/profile/${user.id}`}>
-                        <img className="img-responsive" src={user.profile_photo}/>
+                        <img className="img-responsive" src={user.profile_photo} alt="Avatar"/>
                         <figcaption className="post-author">{user.login}</figcaption>
                       </Link>
                     </figure>
@@ -40,13 +41,13 @@ function PostCard(props) {
                         <div className="sub-imgs-home">
                             {props.Post.images ? (props.Post.images.split(' ').map((image) =>
                                 image !== "" ? (
-                                    <img className="post-img-home" src={image}/>
+                                    <img key={image} className="post-img-home" src={image} alt="Avatar"/>
                                 ) : (null)
                             )) : (null)}
                         </div>
                         <div className="post-categories">
                               {props.Post.categories.split(',').map((category) =>
-                                <div className="category">{category}</div>
+                                <div key={category} className="category">{category}</div>
                               )}
                         </div>
                         </Link>

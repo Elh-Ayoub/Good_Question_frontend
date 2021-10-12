@@ -14,7 +14,7 @@ function CommentLink(props){
   let result = null
   if(comments){
     result =    <div className="comments-collapse">
-                    <a href="#" type="button">Comments({comments.length})</a>
+                    <div type="button">Comments({comments.length})</div>
                 </div>
   }
   return result

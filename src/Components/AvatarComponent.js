@@ -21,7 +21,6 @@ function Avatar(props){
         formData.append('user', user);
         const imageUrl = `http://127.0.0.1:8000/api/users/avatar`;
         console.log(formData)
-        let newUser = null
          fetch(imageUrl, {
             method: 'POST',
             body:  formData,
@@ -57,7 +56,7 @@ function Avatar(props){
     }
     return  <div className="profile-picture">
                 <div>
-                    <img id="profile-pic" className="user-picture" src={props.user.profile_photo}/>
+                    <img id="profile-pic" className="user-picture" src={props.user.profile_photo} alt="Avatar"/>
                     <div className="file-submit">
                         <label className="selectfile" for="choosefile">Edit profile picture</label>
                         <input id="choosefile" type="file" onChange={changeHandler} name="image"/> 

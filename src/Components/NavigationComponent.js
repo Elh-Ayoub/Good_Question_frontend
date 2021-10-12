@@ -34,7 +34,7 @@ function Navigation(){
     if(showMenu){
         menu = 
         <ul className="menu">
-            <li className="menu-title" onClick={() => setShowMenu(!showMenu)}><img className="menu-icon"src={menuIcon2} 
+            <li className="menu-title" onClick={() => setShowMenu(!showMenu)}><img className="menu-icon"src={menuIcon2} alt="menu"
                 />GoodQuestion</li><hr/>
             <li className="menu-element"><Link className="menu-link" to="/">Posts</Link></li>
             <li className="menu-element"><Link className="menu-link" to="/categories">Categories</Link></li>
@@ -49,7 +49,7 @@ function Navigation(){
     return <div>{transitions(
             (styles, item) => item && <animated.div style={styles}>{menu}</animated.div>
         )}
-        <img className="menu-icon"src={menuIcon} 
+        <img className="menu-icon"src={menuIcon} alt="menu"
                 onClick={() => setShowMenu(!showMenu)}
         />
         </div>

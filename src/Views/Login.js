@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../css/login.css';
 import logo from '../images/logo.png';
 import { Link ,useHistory} from "react-router-dom";
-import axios from 'axios';
 function Login(){
     const [login, setLogin] = useState(null);
     const [email, setEmail] = useState(null);
@@ -13,7 +12,7 @@ function Login(){
             if(localStorage.getItem("user-info")){
                 history.push('/');
             }
-    }, [])
+    })
     async function Submit(){
         let info = {login, email, password};
         const loginUrl = `http://127.0.0.1:8000/api/auth/login`;

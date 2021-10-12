@@ -3,7 +3,7 @@ import Home from "./Views/Home"
 import Login from "./Views/Login"
 import Register from "./Views/Register"
 import ForgetPassword from "./Views/ForgetPassword"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Categories from './Views/Categories';
 import PostsByCategories from './Views/PostsByCategories';
 import Profile from './Views/Profile';

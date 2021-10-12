@@ -23,7 +23,7 @@ function UserProfile(props){
             setUser(response.data)
             console.log(response.data)
         })
-    }, [])
+    }, [userURL])
     if(user){
         content = <div>
             <Header/>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import "../css/profile.css"
 
 function UserProfileCard(props){
@@ -7,7 +7,7 @@ function UserProfileCard(props){
                 <div class="profileContainer">
                     <div class="profile-picture">
                         <div>
-                            <img id="profile-pic" class="user-picture img-center" src={props.user.profile_photo}/>
+                            <img id="profile-pic" class="user-picture img-center" src={props.user.profile_photo} alt="avatar"/>
                             <p className="profile-field">@{props.user.login}</p>
                             <p className="text-center">{props.user.full_name}</p>
                             <p className="text-center">{props.user.email}</p>

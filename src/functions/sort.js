@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import ArrowUp from '../images/arrow-up.png'
 import ArrowDown from '../images/arrow-down.png'
 
@@ -8,8 +7,8 @@ export function sort(posts, field, setSortBy, order){
         document.getElementById(activeBtnId).style.color = "white";
         document.getElementById(activeBtnId).style.border = "3px solid #819ccc";
         document.getElementById(activeBtnId).style.border = "3px solid #819ccc";
-        if(order == 'desc')document.getElementById(activeBtnId).childNodes[1].src = ArrowUp
-        if(order == 'asc')document.getElementById(activeBtnId).childNodes[1].src = ArrowDown
+        if(order === 'desc')document.getElementById(activeBtnId).childNodes[1].src = ArrowUp
+        if(order === 'asc')document.getElementById(activeBtnId).childNodes[1].src = ArrowDown
         document.getElementById(activeBtnId).childNodes[1].style.width = "20px";
         document.getElementById(activeBtnId).childNodes[1].style.height = "20px";
         //
@@ -25,8 +24,8 @@ export function sort(posts, field, setSortBy, order){
         document.getElementById(noneActive2).childNodes[1].style.width = "0";
         document.getElementById(noneActive2).childNodes[1].style.height = "0";
     }
-    if(field == "likes"){
-        if(order == "desc"){
+    if(field === "likes"){
+        if(order === "desc"){
             setSortBy("asc")
             posts.sort(function(a, b) { 
                 var keyA = a.rating, keyB = b.rating;
@@ -35,7 +34,7 @@ export function sort(posts, field, setSortBy, order){
                 return 0;
             });
         }
-        else if(order == "asc"){
+        else if(order === "asc"){
             setSortBy("desc")
             posts.sort(function(a, b) {
                 var keyA = a.rating, keyB = b.rating;
@@ -45,8 +44,8 @@ export function sort(posts, field, setSortBy, order){
             });
         }
         restyle('bylikes', 'bydate', 'bytitle', order)
-    }else if(field == "date"){
-        if(order == "desc"){
+    }else if(field === "date"){
+        if(order === "desc"){
             setSortBy("asc")
             posts.sort(function(a, b) {
                 var keyA = a.created_at, keyB = b.created_at;
@@ -55,7 +54,7 @@ export function sort(posts, field, setSortBy, order){
                 return 0;
             });
         }
-        else if(order == "asc"){
+        else if(order === "asc"){
             setSortBy("desc")
             posts.sort(function(a, b) {
                 var keyA = a.created_at, keyB = b.created_at;
@@ -66,8 +65,8 @@ export function sort(posts, field, setSortBy, order){
         }         
         restyle('bydate', 'bylikes', 'bytitle', order)
 
-    }else if(field == "title"){
-        if(order == "desc"){
+    }else if(field === "title"){
+        if(order === "desc"){
             setSortBy("asc")
             posts.sort(function(a, b) {
                 var keyA = a.title, keyB = b.title;
@@ -76,7 +75,7 @@ export function sort(posts, field, setSortBy, order){
                 return 0;
             });
         }
-        else if(order == "asc"){
+        else if(order === "asc"){
             setSortBy("desc")
             posts.sort(function(a, b) {
                 var keyA = a.title, keyB = b.title;

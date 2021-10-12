@@ -24,7 +24,7 @@
 }
 .author-field{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     text-align: center;
 }
 .author-menu{
@@ -140,7 +140,7 @@
 .replies-container{
     display: flex;
     width: 100%;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     margin: 5px 0;
 }

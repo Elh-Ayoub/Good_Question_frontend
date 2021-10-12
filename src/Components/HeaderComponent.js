@@ -10,14 +10,13 @@ function Header() {
     const history = useHistory()
     const [resaults, setResaults] = useState(null);
     const [users, setUsers] = useState(null);
-    const [showResaults, setShowResaults] = useState();
     const AllUsersURL = `http://127.0.0.1:8000/api/users`
-    useEffect(() => {
-        axios.get(AllUsersURL)
+    useEffect(() => { async function f(){
+        await axios.get(AllUsersURL)
         .then(response => {
             setUsers(response.data)
         })
-    }, [])
+    } f()}, [AllUsersURL])
     
     async function logout(){
         const logoutrUrl = `http://127.0.0.1:8000/api/auth/logout`;
@@ -54,7 +53,7 @@ function Header() {
                             'contact-us': <Link to="/contact-us">Contact us</Link>,
                         }
             if(users){
-                users.map((user)=>{
+                users.forEach(user => {
                     pages[user.login] = <Link to={`/user/profile/${user.id}`}>{user.login} - profile</Link>
                 })
             }

@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import "../css/profile.css"
 import Header from '../Components/HeaderComponent';
 import Footer from '../Components/FooterComponent';
-import { useHistory } from "react-router-dom";
 import ProfileCard from '../Components/ProfileComponent';
 import axios from 'axios';
 
 function Profile(){
     const [user, setUser] = useState(null)
-    const history = useHistory()
     let content = null
     
     let id = localStorage.getItem('user-info')
@@ -19,7 +17,7 @@ function Profile(){
             setUser(response.data)
             console.log(response.data)
         })
-    }, [])
+    }, [userURL])
     if(user){
         content = <div>
             <Header/>
@@ -30,11 +28,6 @@ function Profile(){
             </div>
         </div>
     }
-    // else{
-    //     alert("Log in or register please to access profile!")
-    //     history.goBack()
-    // }
-        
     return content
 }
 

@@ -4,12 +4,13 @@ import axios from 'axios';
 function UserProfilePhoto(props){
   const AuthorUrl = `http://127.0.0.1:8000/api/users/${props.Author}`;
   const [Author, setAuthor] = useState(null)
-  useEffect(() => {
+  useEffect(() => {async function f(){
+    await 
     axios.get(AuthorUrl)
         .then(response => {
           setAuthor(response.data)
         })
-  }, [AuthorUrl])
+  } f()}, [AuthorUrl])
   let profile_photo = null;
   let login = null;
   let role = null;
@@ -18,16 +19,16 @@ function UserProfilePhoto(props){
     login = Author.login
     role = Author.role
   }
-  if(props.Target == "profile"){
+  if(props.Target === "profile"){
     return  <div className="profile-role">
                 <span>Role: {role}</span>
                 <div className="profile-btn" >
-                  <img src={profile_photo} />{login}
+                  <img src={profile_photo} alt="Avatar"/>{login}
                 </div>
             </div>
   }
   return  <div className="comment-author">
-            <img className="comment-author-photo" src={profile_photo} />
+            <img className="comment-author-photo" src={profile_photo} alt="Avatar"/>
             <figcaption className="post-author">{login}</figcaption>
           </div>;
 }

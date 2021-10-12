@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
@@ -9,15 +9,16 @@ function Menu(props){
     function deleteTarget(){
         axios.delete(commentURL)
         .then(response => {
+            props.setChange(!props.change)
             alert(response.data.success)
-            if(props.Target == 'posts'){
+            if(props.Target === 'posts'){
                 history.push('/')
             }
         })
     }
     let content = null
     function editTarget(){
-        if(props.Target == 'posts'){
+        if(props.Target === 'posts'){
             history.push(`/posts/${props.id}/update`)
         }else{
             content = prompt(`Rewrite your ${(props.Target).slice(0, -1)} here please`, props.content);
@@ -25,6 +26,7 @@ function Menu(props){
                 axios.patch(commentURL, {content})
                 .then(response => {
                     alert(response.data.success)
+                    props.setChange(!props.change)
                 })
             }
         }

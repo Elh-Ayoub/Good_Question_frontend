@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import userIcone from '../images/user-icon.png'
 import UserProfilePhoto from './UserProfilePhotoComponent';
 import Like from './LikeComponent';
 import Menu from './MenuComponent';
@@ -10,12 +9,13 @@ function Comments(props){
   const [comments, setComments] = useState(null)
   const CommentsUrl = `http://127.0.0.1:8000/api/posts/${props.PostId}/comments`;
   
-  useEffect(() => {
+  useEffect(() => {async function f(){
+    await 
     axios.get(CommentsUrl)
         .then(response => {
           setComments(response.data)
         })
-  }, [comments, props.change])
+  } f()}, [props.change, CommentsUrl])
   let result = null
   
   if(comments){
@@ -26,7 +26,7 @@ function Comments(props){
       return 0;
     });
     result =  comments.map((comment) => 
-              <div className="comment">
+              <div key={comment.id} className="comment">
                     <UserProfilePhoto Author={comment.author}/>
                 <div className="comment-content">
                   <div className="w-100">
@@ -40,8 +40,8 @@ function Comments(props){
                       <Like Target="comments" TargetId={comment.id}/>
                     </div><CommentReply id={comment.id}/>
                   </div>
-                  {comment.author == localStorage.getItem('user-info') ? (
-                          <Menu Target='comments' id={comment.id} content ={comment.content}/>
+                  {comment.author.toString() === localStorage.getItem('user-info') ? (
+                          <Menu Target='comments' id={comment.id} content ={comment.content} setChange={props.setChange} change={props.change}/>
                       ) : (null)}
                 </div>
               </div>)

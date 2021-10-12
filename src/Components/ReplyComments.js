@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router';
 import Like from './LikeComponent';
 import Menu from './MenuComponent';
 import UserProfilePhoto from './UserProfilePhotoComponent';
@@ -9,23 +8,21 @@ function CommentReply(props){
     const [showReplies, setShowReplies] = useState(false)
     const [content, setContent] = useState(null)
     const [replies, setReplies] = useState(null)
-    const [success, setSuccess] = useState(null)
-    const history = useHistory()
+    const [change, setChange] = useState(true)
     let commentURL = `http://127.0.0.1:8000/api/comments/${props.id}/comment`
-    useEffect(()=> {
+    useEffect(()=> {async function f(){
+        await 
         axios.get(commentURL)
         .then(response => {
             setReplies(response.data)
         })
-    }, [success])
+    } f()}, [change, commentURL])
     function createReply(){
         if(localStorage.getItem('user-info')){ 
             axios.post(commentURL,
                 {content:content, user: localStorage.getItem('user-info')}
             ).then(response => {
-                //history.go(0)
-                //setChange(!change)
-                setSuccess(response.data)
+                setChange(!change)
             })  
         }else{
             alert('Login or register first!')
@@ -51,8 +48,8 @@ function CommentReply(props){
                                                     <i className="comment-date">{new Date(reply.created_at).toUTCString()}</i><br/>
                                                     <span>{reply.content}</span>
                                                 </div>
-                                                {reply.author == localStorage.getItem('user-info') ? (
-                                                    <Menu Target='comments' id={reply.id} content ={reply.content}/>
+                                                {reply.author.toString() === localStorage.getItem('user-info') ? (
+                                                    <Menu Target='comments' id={reply.id} content ={reply.content} change={change} setChange={setChange}/>
                                                 ) : (null)}
                                             </div>
                                             <div className="likes-reply">

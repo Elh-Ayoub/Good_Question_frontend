@@ -15,13 +15,14 @@ function Posts(){
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(10)
 
+
     const url = 'http://127.0.0.1:8000/api/posts';
-    useEffect(() => {
-        axios.get(url)
+    useEffect(() => { async function f(){
+        await axios.get(url)
             .then(response => {
                 setPosts(response.data.reverse())
             })
-    }, [url])
+    } f()}, [url])
     let content = null;
     let pagination = null;
     if(posts){
@@ -38,9 +39,9 @@ function Posts(){
     }
     return <div>
             <div className="sort-btns">
-                <button id="bylikes" onClick={() => sort(posts, "likes", setSortByLikes, sortByLikes)}><span>sort by likes</span><img id="like-icon" className='sort-btn-icon' src="" /></button>
-                <button id="bydate" onClick={() => sort(posts, "date", setSortByDate, sortByDate)}><span>sort by date</span><img id="date-icon" className='sort-btn-icon' src=""/></button>
-                <button id="bytitle" onClick={() => sort(posts, "title", setSortByTitle, sortByTitle)}><span>sort by title</span><img id="title-icon" className='sort-btn-icon' src=""/></button>
+                <button id="bylikes" onClick={() => sort(posts, "likes", setSortByLikes, sortByLikes)}><span>sort by likes</span><img id="like-icon" className='sort-btn-icon' src="" alt=""/></button>
+                <button id="bydate" onClick={() => sort(posts, "date", setSortByDate, sortByDate)}><span>sort by date</span><img id="date-icon" className='sort-btn-icon' src="" alt=""/></button>
+                <button id="bytitle" onClick={() => sort(posts, "title", setSortByTitle, sortByTitle)}><span>sort by title</span><img id="title-icon" className='sort-btn-icon' src="" alt=""/></button>
             </div>
             <div>{content}</div>
             {pagination}

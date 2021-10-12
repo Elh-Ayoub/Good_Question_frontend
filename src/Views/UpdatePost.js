@@ -93,7 +93,7 @@ function UpdatePost(){
                             <div className="sub-imgs">
                                 {post.images ? (post.images.split(' ').map((image) =>
                                     image !== "" ? (
-                                        <img className="post-img" src={image}/>
+                                        <img className="post-img" src={image} alt="post-img"/>
                                     ) : (null)
                                 )) : (null)}
                             </div>

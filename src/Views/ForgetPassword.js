@@ -15,7 +15,7 @@ function ForgetPassword(){
         if(localStorage.getItem("user-info")){
             history.push('/');
         }
-    }, [])
+    })
 
     async function SendResetLink(){
         let info = { email };

@@ -88,7 +88,7 @@
 .comment{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     border-radius: 10px;
     margin-top: 10px;
@@ -158,7 +158,10 @@
 .comment-content p{
     margin-left: 5px;
 }
-.comments-collapse a:hover{
+.comments-collapse{
+    cursor: pointer;
+}
+.comments-collapse div:hover{
     color: gray;
 }
 .comment-post{
