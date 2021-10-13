@@ -1,6 +1,6 @@
 <p align="center">
         <a href="https://laravel.com/" rel="nofollow">
-            <img src="https://camo.githubusercontent.com/20b4a486c03551decc449bbca9e4fe3de15699c928a716f1442b9af721b2ded0/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f332f33362f4c6f676f2e6d696e2e737667" height="70" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo.min.svg" style="max-width:100%;">
+            <img src="https://www.alioze.com/wp-content/uploads/2016/11/react-js.png" height="70" data-canonical-src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo.min.svg" style="max-width:100%;">
         </a>
         <a href="https://reactjs.org/" rel="nofollow">
             <img src="https://www.google.co.ma/url?sa=i&url=https%3A%2F%2Fwww.alioze.com%2Freact-js&psig=AOvVaw0VW3PUTgsiIsmYtXMf9y4-&ust=1634242013119000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJD0poqYyPMCFQAAAAAdAAAAABAD" height="70" data-canonical-src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" style="max-width:100%;">
@@ -25,7 +25,7 @@ This is front side of a Q&A web application built with React.js framework, which
     <li><b>NPM</b></li>
 </ul>
 <h2>Hoste API</h2>
-<h3>To host api just follow this steps:</h3>
+<h3>To run this application: (locally)</h3>
 <ol>
     <li><b>Clone this repository</b></li>
     <li><b>Run: npm install</b></li>
