@@ -41,7 +41,7 @@ function Register(){
         }
     }
     return <div className="auth_container">
-                <div class="login_container"> 
+                <form onSubmit={e => Submit(e.preventDefault())} class="login_container"> 
                     <img className="logo-icon-login" src={logo} alt="Logo"/>
                     <div class="login_container__card">
                         {fail ? ( <div className="error"><p>{fail}</p></div>
@@ -71,13 +71,13 @@ function Register(){
                             <label for="inputPassword">Password confirmation</label>
                             <input id="inputPassword" type="password" name="password_confirmation" onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder="confirm your password..."/>
                         </div>
-                        <button className="login_btn" onClick={Submit} type="submit">Register</button>
+                        <button className="login_btn" type="submit">Register</button>
                         <div className="inputField">
                             <Link to="/auth/login" className="login_link">Already have account?</Link>
                             <Link to="/auth/password-reset" className="login_link">Fogot password ?</Link>
                         </div>
                     </div>
-                </div>
+                </form>
            </div>
 }
 

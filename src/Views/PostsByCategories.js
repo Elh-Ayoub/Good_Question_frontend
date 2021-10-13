@@ -45,9 +45,9 @@ function PostsByCategories(props){
             <Header/>
                 <h2 className="page-title">{name.charAt(0).toUpperCase() + name.slice(1)}'s posts</h2>
                 <div className="sort-btns">
-                    <button id="bylikes" onClick={() => sort(posts, "likes", setSortByLikes, sortByLikes)}><span>sort by likes</span><img id="like-icon" className='sort-btn-icon' src="" alt="Sort-by-likes"/></button>
-                    <button id="bydate" onClick={() => sort(posts, "date", setSortByDate, sortByDate)}><span>sort by date</span><img id="date-icon" className='sort-btn-icon' src="" alt="Sort-by-date"/></button>
-                    <button id="bytitle" onClick={() => sort(posts, "title", setSortByTitle, sortByTitle)}><span>sort by title</span><img id="title-icon" className='sort-btn-icon' src="" alt="Sort-by-title"/></button>
+                    <button id="bylikes" onClick={() => sort(posts, "likes", setSortByLikes, sortByLikes)}><span>sort by likes</span><img id="like-icon" className='sort-btn-icon' src="" alt=""/></button>
+                    <button id="bydate" onClick={() => sort(posts, "date", setSortByDate, sortByDate)}><span>sort by date</span><img id="date-icon" className='sort-btn-icon' src="" alt=""/></button>
+                    <button id="bytitle" onClick={() => sort(posts, "title", setSortByTitle, sortByTitle)}><span>sort by title</span><img id="title-icon" className='sort-btn-icon' src="" alt=""/></button>
                 </div>
                 <div>{content}</div>
                 {pagination}

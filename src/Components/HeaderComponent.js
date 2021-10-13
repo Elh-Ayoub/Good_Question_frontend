@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../css/navmenu.css';
 import '../css/header.css';
 import logo from '../images/logo.png';
 import Navigation from './NavigationComponent';
@@ -63,7 +64,7 @@ function Header() {
                 pages['Create post'] = <Link to="/post/create">Create post</Link>
             }
             setResaults(Object.keys(pages).map((key, index) =>
-                (key.toUpperCase().indexOf(value) > -1) ? (<li className="search-res-ele">{pages[key]}</li> ) : (null)
+                (key.toUpperCase().indexOf(value) > -1) ? (<li key={key} className="search-res-ele">{pages[key]}</li> ) : (null)
                 
             ));
         }else{
@@ -73,9 +74,9 @@ function Header() {
     return <nav className="navbar">
             <ul className="left-elements">
                 <li><Navigation/></li>
-                <li><img className="logo-icon" src={logo} alt="Logo"/></li>
-                <li className="left-elem"><Link to='/'>Home</Link></li>
-                <li className="left-elem"><Link to="/contact-us">Contact us</Link></li>
+                <li><Link to='/'><img className="logo-icon" src={logo} alt="Logo"/></Link></li>
+                <li className="left-elem to-hide"><Link to='/'>Home</Link></li>
+                <li className="left-elem to-hide"><Link to="/contact-us">Contact us</Link></li>
                 <li className="search-container">
                     <input type="text" className="search-input" onChange={(e) => search(e.target.value)} placeholder="Search ..."/>
                     <div className="search-bar">

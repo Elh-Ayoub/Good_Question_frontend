@@ -39,7 +39,7 @@ function CommentReply(props){
         PageContent =   <div>
                             <hr/>
                             {replies.map((reply) => 
-                                <div className="reply-comment">
+                                <div key={reply.id} className="reply-comment">
                                     <UserProfilePhoto Author={reply.author}/>
                                     <div className="comment-content">
                                         <div className="w-100">

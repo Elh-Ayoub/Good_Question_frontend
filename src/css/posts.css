@@ -115,6 +115,8 @@
     width: 100%;
 }
 .comment-menu{
+    position: absolute;
+    transform: translateX(-70%);
     border: 1px solid gray;
     list-style: none;
     background: white;
@@ -297,6 +299,11 @@
     }
     .panel{
         text-align: center;
+    }
+    .comment{
+        display: block;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.7);
     }
 }
 @media only screen and (max-width: 337px) {

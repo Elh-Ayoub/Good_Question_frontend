@@ -8,8 +8,7 @@
 .postContainer{
     position: relative;
     display: flex;
-    width: 80%;
-    height: 65%;
+    width: 90%;
     justify-content: center;
     padding: 20px;
     background: rgba(255, 255, 255, 0.5);
@@ -88,6 +87,7 @@
     width: 55%;
 }
 .comments-field{
+    position: relative;
     height: 85%;
     overflow-y: scroll;
     padding: 5px;
@@ -194,5 +194,21 @@
     }
     .footer-4-posts{
         position: relative;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .postContainer{
+        width: auto;
+        padding: 10px 10px 10px 5px;
+    }
+    .post-comments, .replies-container{
+        width: auto;
+    }
+
+    .reply-btn{
+        float: left;
+    }
+    .replies-container{
+        justify-content: flex-start;
     }
 }

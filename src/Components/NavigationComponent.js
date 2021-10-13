@@ -41,6 +41,7 @@ function Navigation(){
             {localStorage.getItem('user-info') ? (<li className="menu-element"><Link className="menu-link" to={`/users/${localStorage.getItem('user-info')}/myposts`}>My posts</Link></li>) : (null)}
             {localStorage.getItem('user-info') ? (<li className="menu-element right-elements-navbar"><Link to="/users/profile" className="menu-link">Profile</Link></li>): 
                     (<li className="menu-element right-elements-navbar"><Link to="/auth/login" className="menu-link">Login</Link></li>)}
+            <li className="menu-element right-elements-navbar"><Link to="/contact-us" className="menu-link">Contact us</Link></li>
             {localStorage.getItem('user-info') ? (<li className="menu-element right-elements-navbar" onClick={logout}><span className="menu-link">Logout</span></li>):
                     (<li className="menu-element right-elements-navbar"><Link to="/auth/register" className="menu-link">Register</Link></li>)}
         </ul>

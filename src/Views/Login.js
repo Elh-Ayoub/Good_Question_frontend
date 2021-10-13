@@ -36,7 +36,7 @@ function Login(){
         }
     }
     return <div className="auth_container">
-                <div class="login_container"> 
+                <form onSubmit={e => Submit(e.preventDefault())} class="login_container"> 
                     <Link to="/"><img className="logo-icon-login" src={logo} alt="Logo"/></Link>
                     <div class="login_container__card">
                     {fail ? ( <div className="error"><p>{fail}</p></div>
@@ -54,13 +54,13 @@ function Login(){
                                 <label for="inputPassword">Password</label>
                                 <input id="inputPassword" type="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Input your password..."/>
                             </div>
-                            <button className="login_btn" onClick={Submit} type="submit">Log in</button>
+                            <button className="login_btn" type="submit">Log in</button>
                             <div className="inputField">
                                 <Link to="/auth/register" className="login_link">Not registed yet?</Link>
                                 <Link to="/auth/password-reset" className="login_link">Fogot password ?</Link>
                             </div>
                     </div>
-                </div>
+                </form>
            </div>
 }
 

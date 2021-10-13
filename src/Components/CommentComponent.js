@@ -31,18 +31,18 @@ function Comments(props){
                 <div className="comment-content">
                   <div className="w-100">
                     <div className="comment-date-delete">
-                      <div>
-                        <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i><br/>
-                        <span>{comment.content}</span>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+                        <i className="comment-date">{new Date(comment.created_at).toUTCString()}</i>
+                        {comment.author.toString() === localStorage.getItem('user-info') ? (
+                          <Menu Target='comments' id={comment.id} content ={comment.content} setChange={props.setChange} change={props.change}/>
+                        ) : (null)}
                       </div>
                     </div>
+                    <span>{comment.content}</span>
                     <div className="likes-reply">
                       <Like Target="comments" TargetId={comment.id}/>
                     </div><CommentReply id={comment.id}/>
                   </div>
-                  {comment.author.toString() === localStorage.getItem('user-info') ? (
-                          <Menu Target='comments' id={comment.id} content ={comment.content} setChange={props.setChange} change={props.change}/>
-                      ) : (null)}
                 </div>
               </div>)
               

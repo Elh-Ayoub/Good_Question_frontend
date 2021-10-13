@@ -35,6 +35,8 @@ function PostyIdCard(props){
                 { content: comment, user: localStorage.getItem('user-info') }
             ).then(response => {
                 setChange(!change)
+                document.getElementById('comment-input').value = ""
+                setComment(null)
             })
         }else{
             alert('Login or register first!')
@@ -78,16 +80,16 @@ function PostyIdCard(props){
                     <Like Target="posts" TargetId={props.Post.id}/>
                 </div>
                 <hr/>
-                <div className="post-comments">
+                <form onSubmit={e => createComment(e.preventDefault())} className="post-comments">
                     <div className="comments-field">
                         {user ? (<Comments className="comment-cont" PostId={props.Post.id} user={user} change={change} setChange={setChange}/>) : (null)}
                          
                     </div>
                     <div className="input-field-comment">
                         <input type="text" id="comment-input" className="comment-input" onChange={(e) => {setComment(e.target.value)}} placeholder="Type a comment..."/>
-                        <button className="send-comment" onClick={createComment}>send</button>
+                        <button className="send-comment">send</button>
                     </div>
-                </div>
+                </form>
             </div>
     
 }

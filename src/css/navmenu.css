@@ -30,6 +30,7 @@
 .menu-element .menu-link{
     width: 100%;
     text-align: center;
+    padding: 10px;
 }
 .menu-element:hover{
     box-shadow: #7f9bca 0px 2px 5px -1px, #7f9bca 0px 1px 3px -1px;
